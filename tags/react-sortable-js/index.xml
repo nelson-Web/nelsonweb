@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>React-sortable js on NelsonWeb</title>
+    <link>https://nelsonweb.netlify.com/tags/react-sortable-js/</link>
+    <description>Recent content in React-sortable js on NelsonWeb</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <lastBuildDate>Tue, 07 Apr 2020 18:55:04 -0600</lastBuildDate>
+    
+	<atom:link href="https://nelsonweb.netlify.com/tags/react-sortable-js/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Como utilizar react-sortablejs</title>
+      <link>https://nelsonweb.netlify.com/post/ejemplo-react-sortablejs/</link>
+      <pubDate>Tue, 07 Apr 2020 18:55:04 -0600</pubDate>
+      
+      <guid>https://nelsonweb.netlify.com/post/ejemplo-react-sortablejs/</guid>
+      <description>&lt;p&gt;En este ejemplo practico te enseñare a usar &lt;a href=&#34;https://github.com/SortableJS/react-sortablejs&#34;&gt;react-sortablejs&lt;/a&gt; el cual es una libreria de JavaScript la cual sirve para implementar &lt;strong&gt;drag and drop&lt;/strong&gt; en tu sitio web o aplicación.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

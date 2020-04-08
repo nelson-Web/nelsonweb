@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>NelsonWeb</title>
+    <link>https://nelsonweb.netlify.com/authors/hugo-authors/</link>
+    <description>Recent content on NelsonWeb</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    
+	<atom:link href="https://nelsonweb.netlify.com/authors/hugo-authors/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+  </channel>
+</rss>

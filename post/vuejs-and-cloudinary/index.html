@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<title>
+  
+     Como subir imagenes a Cloudinary con Vue js | 
+    NelsonWeb
+  
+</title><meta name="description" content="Encuentra codigo de ejemplo con licencia MIT en GitHub"><meta name="author" content="Nelson Hernandez">
+
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/themes/prism.min.css">
+    
+
+
+
+    
+        
+            <link rel="stylesheet" href="/dist/main.37ab3f61b95417873748.min.css">
+        
+    
+
+
+
+
+<link rel="canonical" href="https://nelsonweb.netlify.com/post/vuejs-and-cloudinary/"><meta property="og:title" content="Como subir imagenes a Cloudinary con Vue js" />
+<meta property="og:description" content="En este ejemplo te mostrare como subir imagenes a los servidores de Cloudinary para esto ya debes tener una cuenta creada. Este servicio nos brinda un plan gratis si tu prefieres usarlo para practicar." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://nelsonweb.netlify.com/post/vuejs-and-cloudinary/" />
+<meta property="og:image" content="https://nelsonweb.netlify.com/vuejs-cloudinary.png" />
+<meta property="article:published_time" content="2020-04-07T19:06:25-06:00" />
+<meta property="article:modified_time" content="2020-04-07T19:06:25-06:00" />
+<meta itemprop="name" content="Como subir imagenes a Cloudinary con Vue js">
+<meta itemprop="description" content="En este ejemplo te mostrare como subir imagenes a los servidores de Cloudinary para esto ya debes tener una cuenta creada. Este servicio nos brinda un plan gratis si tu prefieres usarlo para practicar.">
+<meta itemprop="datePublished" content="2020-04-07T19:06:25-06:00" />
+<meta itemprop="dateModified" content="2020-04-07T19:06:25-06:00" />
+<meta itemprop="wordCount" content="423">
+<meta itemprop="image" content="https://nelsonweb.netlify.com/vuejs-cloudinary.png">
+
+
+
+<meta itemprop="keywords" content="Vuejs,Cloudinary,Subida de imagenes," /><meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://nelsonweb.netlify.com/vuejs-cloudinary.png"/>
+
+<meta name="twitter:title" content="Como subir imagenes a Cloudinary con Vue js"/>
+<meta name="twitter:description" content="En este ejemplo te mostrare como subir imagenes a los servidores de Cloudinary para esto ya debes tener una cuenta creada. Este servicio nos brinda un plan gratis si tu prefieres usarlo para practicar."/>
+
+</head>
+<body>
+    
+<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top shadow-sm" id="navbar-main-menu">
+    <div class="container">
+        <a class="navbar-brand font-weight-bold" href="https://nelsonweb.netlify.com/">NelsonWeb</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="main-menu">
+            <ul class="navbar-nav ml-auto">
+                
+                    <li class="nav-item"><a class="nav-link" href="/">Inicio</a></li>
+                
+                    <li class="nav-item"><a class="nav-link" href="/acerca-de/">Acerca de</a></li>
+                
+            
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+    
+<main class="content-page container pt-7 pb-5">
+    
+    <div class="row">
+        <div class="col">
+            <article>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="meta text-muted mb-3">
+                            <p class="created text-muted text-uppercase font-weight-bold mb-1">April 7, 2020</p>
+                            <span class="mr-2"><i class="fas fa-book-open mr-2"></i>423 words</span>
+                            <span><i class="fas fa-clock mr-2"></i>2 mins read</span>
+                        </div>
+
+                        <h1>Como subir imagenes a Cloudinary con Vue js</h1>
+
+                        
+                    </div>
+                </div><div class="row justify-content-center mb-3">
+                                <div class="col-lg-10">
+                                    <img data-src="/images/vuejs-cloudinary_hucd03819e96039a10e18f3299cedebd94_118230_900x500_fit_box_2.png" class="img-fluid rounded mx-auto d-block" alt="Como subir imagenes a Cloudinary con Vue js">
+                                </div>
+                            </div><div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="content">
+                            <p>En este ejemplo te mostrare como subir imagenes a los servidores de Cloudinary para esto ya debes tener una cuenta creada. Este servicio nos brinda un plan gratis si tu prefieres usarlo para practicar.</p>
+<p><strong>Repositorio en Github</strong> <a href="https://github.com/nelson-Web/flask-graphene-intro">enlace</a></p>
+<p>En este caso estaremos usando el metodo <a href="https://graphene-python.org/">Fetch</a> de JavaScript pero si tu prefieres puedes usar <strong>axios</strong>.</p>
+<ol>
+<li>Creamos un proyecto de Vuejs</li>
+</ol>
+<p>En este caso estare utilizando el CLI pero tu puedes usar el cdn si prefieres.</p>
+<pre><code>vue create &lt;nombre del proyecto&gt;
+</code></pre>
+<ol start="2">
+<li>Creamos un formulario.</li>
+</ol>
+<p>Ahora crearemos en formulario con un input de tipo <strong>file</strong> y un boton con el evento <strong>change</strong>.</p>
+<pre><code class="language-Javascript">
+&lt;form @submit.prevent=&quot;GuardarImagen()&quot; method=&quot;post&quot;&gt;
+      &lt;input type=&quot;file&quot; @change=&quot;processFile($event)&quot; /&gt;
+      &lt;button type=&quot;submit&quot;&gt;subir imagen&lt;/button&gt;
+    &lt;/form&gt;
+
+</code></pre>
+<p><img src="https://res.cloudinary.com/nelsonweb/image/upload/v1586358272/formulario_fhtggq.png" alt="imagen-tamaño" class="img-fluid rounded mx-auto d-block"></p>
+<ol start="3">
+<li>Creamos la función para obtener los valores de la imagen</li>
+</ol>
+<p>La función <strong>processFile</strong> recibe como parametro el evento y por medio de el podemos ver los valores de la imagen.</p>
+<p>Algunos valores que podemos ver son: nombre, tamaño, tipo, etc.</p>
+<pre><code class="language-Javascript">
+&lt;script&gt;
+export default {
+  methods: {
+    processFile(event) {
+      this.imagen = event.target.files[0];
+      console.log(this.imagen);
+    }
+  }
+};
+&lt;/script&gt;
+</code></pre>
+<p>Al subir imagen de nuestro computador obtenemos por consola esto</p>
+<p><img src="https://res.cloudinary.com/nelsonweb/image/upload/v1586358270/console_m9yifp.jpg" alt="consola" class="img-fluid rounded mx-auto d-block"></p>
+<ol start="4">
+<li>Obtenemos la url</li>
+</ol>
+<p>Para esto necesitamos ubicarnos en nuestro dashboard obtener la url o ruta para subir la imagen y el preset que servira para tener acceso a nuestra cuenta asi nadie podra subir la imagen hasta que tenga autorizacion o el &ldquo;preset&rdquo;</p>
+<p><img src="https://res.cloudinary.com/nelsonweb/image/upload/v1586358276/url_xvvszy.png" alt="url cloudinary" class="img-fluid rounded mx-auto d-block"></p>
+<ol start="5">
+<li>Obtenemos el preset</li>
+</ol>
+<p>Para esto nos ubicamos en <strong>configuraciones</strong>&gt;upload</p>
+<p><img src="https://res.cloudinary.com/nelsonweb/image/upload/v1586358275/upload_whgptv.png" alt="configuraciones" class="img-fluid rounded mx-auto d-block"></p>
+<p>Luego bajamos a la opción <strong>Upload Presets</strong> damos click en <strong>Enable unsigned uploading</strong> y el genera un preset que vamos a utilizar</p>
+<p><img src="https://res.cloudinary.com/nelsonweb/image/upload/v1586358272/preset_ozplbr.png" alt="Upload Presets" class="img-fluid rounded mx-auto d-block"></p>
+<ol start="6">
+<li>Creamos la función para guardar nuestras imagenes en Cloudinary</li>
+</ol>
+<p>Creamos la funcion <strong>GuardarImagen()</strong>, luego creamos una instancia formData en la cual llenamos la informacion de nuestra imagen y el preset</p>
+<p>Ahora usaremos el metodo <strong>Fetch</strong> le damos el metodo y el body que seria la variable formData luego si tu prefieres puedes usar <strong>ASYNC/AWAIT</strong></p>
+<pre><code class="language-Javascript">&lt;script&gt;
+export default {
+  data() {
+    return {
+       CLOUDINARY_URL: &quot;coloca tu url&quot;,
+      CLOUDINARY_UPLOAD_PRESET: &quot;coloca tu preset&quot;,
+      imagen: []
+    };
+  },
+  methods: {
+    processFile(event) {
+      this.imagen = event.target.files[0];
+      console.log(this.imagen);
+    },
+    GuardarImagen() {
+      let formData = new FormData();
+      formData.append(&quot;file&quot;, this.imagen); // le damos los datos de la imagen luego que se lleno en la funcion processFile()
+      formData.append(&quot;upload_preset&quot;, this.CLOUDINARY_UPLOAD_PRESET); // le damos nuestro preset
+
+      //subiendo imagen con fetch
+      fetch(this.CLOUDINARY_URL, { method: &quot;POST&quot;, body: formData })
+        .then(response =&gt; response.json()) //convertimos la respuesta en json
+        .then(data =&gt; console.log(data.url))// obtenemos la url de la imagen guardada
+        .catch(error =&gt; console.log(&quot;ocurrio un error &quot; , error)); //capturamos un posible error
+    }
+  }
+};
+&lt;/script&gt;&lt;!--more--&gt;
+
+</code></pre>
+<ol start="7">
+<li>Obtenemos la url de la imagen como respuesta</li>
+</ol>
+<p><img src="https://res.cloudinary.com/nelsonweb/image/upload/v1586358273/response-cloudinary_b5df4m_gsv4li.png" alt="url-imagen-console" class="img-fluid rounded mx-auto d-block"></p>
+<p><strong>Repositorio en Github</strong> <a href="https://github.com/nelson-Web/flask-graphene-intro">enlace</a></p>
+                        </div><div class="tags my-3"><a class="badge badge-pill badge-light border mr-2" href="/tags/vuejs">
+                                    <i class="fas fa-tag mr-2"></i>Vuejs
+                                </a><a class="badge badge-pill badge-light border mr-2" href="/tags/cloudinary">
+                                    <i class="fas fa-tag mr-2"></i>Cloudinary
+                                </a><a class="badge badge-pill badge-light border mr-2" href="/tags/subida-de-imagenes">
+                                    <i class="fas fa-tag mr-2"></i>Subida de imagenes
+                                </a></div><ul class="share nav my-3 justify-content-end">
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://twitter.com/intent/tweet?url=https%3a%2f%2fnelsonweb.netlify.com%2fpost%2fvuejs-and-cloudinary%2f&text=Como%20subir%20imagenes%20a%20Cloudinary%20con%20Vue%20js">
+              <i class="fa-fw fab fa-twitter"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://www.linkedin.com/shareArticle?url=https%3a%2f%2fnelsonweb.netlify.com%2fpost%2fvuejs-and-cloudinary%2f&title=Como%20subir%20imagenes%20a%20Cloudinary%20con%20Vue%20js">
+                <i class="fa-fw fab fa-linkedin-in"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fnelsonweb.netlify.com%2fpost%2fvuejs-and-cloudinary%2f&t=Como%20subir%20imagenes%20a%20Cloudinary%20con%20Vue%20js">
+                <i class="fa-fw fab fa-facebook-f"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://reddit.com/submit?url=https%3a%2f%2fnelsonweb.netlify.com%2fpost%2fvuejs-and-cloudinary%2f&title=Como%20subir%20imagenes%20a%20Cloudinary%20con%20Vue%20js">
+                <i class="fa-fw fab fa-reddit-alien"></i>
+            </a>
+        </li>
+    </nav>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        
+                    </div>
+                </div><div class="row justify-content-center my-3">
+                    <div class="col-lg-8">
+                        <div id="commento"></div>
+                        <script src="https://commento.io"></script>
+                    </div>
+                </div></article>
+        </div>
+    </div>
+
+    
+</main>
+
+
+    <footer class="footer text-center bg-dark py-6">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <ul class="list-inline">
+                    <li class="list-inline-item">
+                            <a href="https://facebook.com" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-facebook fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://github.com/Nelson-developer" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://linkedin.com" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://stackoverflow.com" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                </ul>
+
+                <p class="text-muted">
+                    
+                        Copyright &copy; NelsonWeb 2020
+                    
+                </p>
+
+                <p class="text-muted">
+                Powered by <a href="https://gohugo.io" target="_blank">Hugo</a> with <a href="https://github.com/puresyntax71/hugo-theme-chunky-poster" target="_blank">Chunky Poster</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    
+    
+        
+            <script src="/dist/main.d608eadfe5ac0688902e.min.js"></script>
+        
+    
+
+
+
+<script>
+    window.Prism = window.Prism || {};
+    window.Prism.manual = true;
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/components/prism-core.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/plugins/autoloader/prism-autoloader.min.js"></script>
+
+
+
+
+
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-XXXX', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+</body>
+</html>

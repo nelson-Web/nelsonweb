@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GraphQL on NelsonWeb</title>
+    <link>https://nelsonweb.netlify.com/tags/graphql/</link>
+    <description>Recent content in GraphQL on NelsonWeb</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <lastBuildDate>Sun, 05 Apr 2020 21:55:32 -0600</lastBuildDate>
+    
+	<atom:link href="https://nelsonweb.netlify.com/tags/graphql/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Como usar Graphene con Flask</title>
+      <link>https://nelsonweb.netlify.com/post/python-graphene/</link>
+      <pubDate>Sun, 05 Apr 2020 21:55:32 -0600</pubDate>
+      
+      <guid>https://nelsonweb.netlify.com/post/python-graphene/</guid>
+      <description>&lt;p&gt;En este ejemplo practico te enseñare a usar Graphene que es una biblioteca para construir una API GraphQL en Python fácilmente. Para esto utilizaremos el microframework web Flask.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

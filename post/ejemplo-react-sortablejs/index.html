@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<title>
+  
+     Como utilizar react-sortablejs | 
+    NelsonWeb
+  
+</title><meta name="description" content="Encuentra codigo de ejemplo con licencia MIT en GitHub"><meta name="author" content="Nelson Hernandez">
+
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/themes/prism.min.css">
+    
+
+
+
+    
+        
+            <link rel="stylesheet" href="/dist/main.37ab3f61b95417873748.min.css">
+        
+    
+
+
+
+
+<link rel="canonical" href="https://nelsonweb.netlify.com/post/ejemplo-react-sortablejs/"><meta property="og:title" content="Como utilizar react-sortablejs" />
+<meta property="og:description" content="En este ejemplo practico te enseñare a usar react-sortablejs el cual es una libreria de JavaScript la cual sirve para implementar drag and drop en tu sitio web o aplicación." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://nelsonweb.netlify.com/post/ejemplo-react-sortablejs/" />
+<meta property="og:image" content="https://nelsonweb.netlify.com/react-sortable.png" />
+<meta property="article:published_time" content="2020-04-07T18:55:04-06:00" />
+<meta property="article:modified_time" content="2020-04-07T18:55:04-06:00" />
+<meta itemprop="name" content="Como utilizar react-sortablejs">
+<meta itemprop="description" content="En este ejemplo practico te enseñare a usar react-sortablejs el cual es una libreria de JavaScript la cual sirve para implementar drag and drop en tu sitio web o aplicación.">
+<meta itemprop="datePublished" content="2020-04-07T18:55:04-06:00" />
+<meta itemprop="dateModified" content="2020-04-07T18:55:04-06:00" />
+<meta itemprop="wordCount" content="400">
+<meta itemprop="image" content="https://nelsonweb.netlify.com/react-sortable.png">
+
+
+
+<meta itemprop="keywords" content="React,Sortable js,React-sortable js," /><meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://nelsonweb.netlify.com/react-sortable.png"/>
+
+<meta name="twitter:title" content="Como utilizar react-sortablejs"/>
+<meta name="twitter:description" content="En este ejemplo practico te enseñare a usar react-sortablejs el cual es una libreria de JavaScript la cual sirve para implementar drag and drop en tu sitio web o aplicación."/>
+
+</head>
+<body>
+    
+<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top shadow-sm" id="navbar-main-menu">
+    <div class="container">
+        <a class="navbar-brand font-weight-bold" href="https://nelsonweb.netlify.com/">NelsonWeb</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="main-menu">
+            <ul class="navbar-nav ml-auto">
+                
+                    <li class="nav-item"><a class="nav-link" href="/">Inicio</a></li>
+                
+                    <li class="nav-item"><a class="nav-link" href="/acerca-de/">Acerca de</a></li>
+                
+            
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+    
+<main class="content-page container pt-7 pb-5">
+    
+    <div class="row">
+        <div class="col">
+            <article>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="meta text-muted mb-3">
+                            <p class="created text-muted text-uppercase font-weight-bold mb-1">April 7, 2020</p>
+                            <span class="mr-2"><i class="fas fa-book-open mr-2"></i>400 words</span>
+                            <span><i class="fas fa-clock mr-2"></i>2 mins read</span>
+                        </div>
+
+                        <h1>Como utilizar react-sortablejs</h1>
+
+                        
+                    </div>
+                </div><div class="row justify-content-center mb-3">
+                                <div class="col-lg-10">
+                                    <img data-src="/images/react-sortable_hu1a816f62d85335282873b2becf8694c2_52602_900x500_fit_box_2.png" class="img-fluid rounded mx-auto d-block" alt="Como utilizar react-sortablejs">
+                                </div>
+                            </div><div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="content">
+                            <p>En este ejemplo practico te enseñare a usar <a href="https://github.com/SortableJS/react-sortablejs">react-sortablejs</a> el cual es una libreria de JavaScript la cual sirve para implementar <strong>drag and drop</strong> en tu sitio web o aplicación.</p>
+<p><strong>Enlace a Repositorio</strong> <a href="https://github.com/nelson-Web/react-sortablejs-example.git">enlace</a></p>
+<ul>
+<li>¿Como implementar react-sortablejs con una lista ?</li>
+</ul>
+<p>Este es el ejemplo mas sencillo en el cual creamos un componente <strong><!-- raw HTML omitted --> <!-- raw HTML omitted --></strong> y nosotros le damos la lista la cual queremos que tenga la funcionalidad de arrastrar y soltar</p>
+<pre><code class="language-jsx">import React, { Component } from 'react'
+import { ReactSortable } from &quot;react-sortablejs&quot;;
+
+export default class List1 extends Component {
+    state = {
+        list: [
+            { id: &quot;1&quot;, name: &quot;shrek&quot; },
+            { id: &quot;2&quot;, name: &quot;Nelson&quot; },
+            { id: &quot;3&quot;, name: &quot;Prueba&quot; }
+        ]
+    };
+    render() {
+        return (
+            &lt;div class=&quot;container&quot;&gt;
+                &lt;div className=&quot;row align-items-start&quot;&gt;
+                    &lt;div className=&quot;col&quot;&gt;
+                     &lt;/div&gt;
+                    &lt;div class=&quot;col mt-3&quot;&gt;
+                        &lt;h6 className=&quot;text-center&quot;&gt;Este es un ejemplo con una lista&lt;/h6&gt;
+
+                        &lt;ReactSortable
+                            list={this.state.list}
+                            setList={newState =&gt; this.setState({ list: newState })}
+                        &gt;
+                            {this.state.list.map(item =&gt; (
+                                &lt;div key={item.id}&gt;
+                                    &lt;div className=&quot;card bg-primary m-3 cursor-draggable&quot; &gt;
+                                        &lt;div className=&quot;card-body text-white&quot;&gt;
+                                            {item.name}
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            ))}
+                        &lt;/ReactSortable&gt;
+
+                    &lt;/div&gt;
+                    &lt;div className=&quot;col&quot;&gt;
+                   &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+        );
+    }
+}
+</code></pre>
+<p>Y este seria el resultado que obtenemos. Ojo <strong>Estoy utilizando Bootstrap 4 para el diseño asi que si prefieres los puedes instalar</strong></p>
+<p><img src="https://res.cloudinary.com/nelsonweb/image/upload/v1586359543/1_r6rkiv.gif" alt="list1-draggable" class="img-fluid rounded mx-auto d-block"></p>
+<ul>
+<li>¿Como implementar react-sortablejs con dos listas ?</li>
+</ul>
+<p>Para este ejemplo tendremos una lista vacia en nuestro estado para poder llenarla cuando arrastremos entre las cajas. La diferencia que tiene este componente es la propiedad <strong>group=&quot;shared-group-name&rdquo;</strong> la cual nos permite arrastrar entre dos listas o mas.</p>
+<pre><code class="language-jsx">import React, { Component } from 'react'
+import { ReactSortable } from &quot;react-sortablejs&quot;;
+
+export default class List2 extends Component {
+    state = {
+        list: [
+            { id: &quot;1&quot;, name: &quot;shrek&quot; },
+            { id: &quot;2&quot;, name: &quot;Nelson&quot; },
+            { id: &quot;3&quot;, name: &quot;Prueba&quot; }
+        ],
+        list2: []
+    };
+    render() {
+        return (
+            &lt;div class=&quot;container&quot;&gt;
+                &lt;div className=&quot;row align-items-start &quot;&gt;
+                    &lt;div className=&quot;col bg-success&quot;&gt;
+                    &lt;h6 className=&quot;text-center&quot;&gt;lista 1&lt;/h6&gt;
+
+                    &lt;ReactSortable
+                            list={this.state.list}
+                            setList={newState =&gt; this.setState({ list: newState })}
+                            group=&quot;shared-group-name&quot;
+                        &gt;
+                            {this.state.list.map(item =&gt; (
+                                &lt;div key={item.id}&gt;
+                                    &lt;div className=&quot;card  m-3 cursor-draggable&quot; &gt;
+                                        &lt;div className=&quot;card-body&quot;&gt;
+                                            {item.name}
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            ))}
+                        &lt;/ReactSortable&gt;
+
+                     &lt;/div&gt;
+
+
+                    &lt;div class=&quot;col bg-danger&quot;&gt;
+                        &lt;h6 className=&quot;text-center&quot;&gt;lista 2&lt;/h6&gt;
+
+                        &lt;ReactSortable
+                            list={this.state.list2}
+                            setList={newState =&gt; this.setState({ list2: newState })}
+                            group=&quot;shared-group-name&quot;
+                        &gt;
+                            {this.state.list2.map(item =&gt; (
+                                &lt;div key={item.id}&gt;
+                                    &lt;div className=&quot;card m-3 cursor-draggable&quot; &gt;
+                                        &lt;div className=&quot;card-body &quot;&gt;
+                                            {item.name}
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            ))}
+                        &lt;/ReactSortable&gt;
+
+                    &lt;/div&gt;
+                    &lt;div className=&quot;col mt-3&quot;&gt;
+                        &lt;h6&gt;Puedas intercambiar datos entre la lista 1 y 2&lt;/h6&gt;
+                   &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        )
+    }
+}
+
+</code></pre>
+<p>Y este seria el resultado que obtenemos.</p>
+<p><img src="https://res.cloudinary.com/nelsonweb/image/upload/v1586358283/2_m5yd3y.gif" alt="list2-draggable" class="img-fluid rounded mx-auto d-block"></p>
+<p><strong>Enlace a Repositorio</strong> <a href="https://github.com/nelson-Web/react-sortablejs-example.git">enlace</a></p>
+                        </div><div class="tags my-3"><a class="badge badge-pill badge-light border mr-2" href="/tags/react">
+                                    <i class="fas fa-tag mr-2"></i>React
+                                </a><a class="badge badge-pill badge-light border mr-2" href="/tags/sortable-js">
+                                    <i class="fas fa-tag mr-2"></i>Sortable js
+                                </a><a class="badge badge-pill badge-light border mr-2" href="/tags/react-sortable-js">
+                                    <i class="fas fa-tag mr-2"></i>React-sortable js
+                                </a></div><ul class="share nav my-3 justify-content-end">
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://twitter.com/intent/tweet?url=https%3a%2f%2fnelsonweb.netlify.com%2fpost%2fejemplo-react-sortablejs%2f&text=Como%20utilizar%20react-sortablejs">
+              <i class="fa-fw fab fa-twitter"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://www.linkedin.com/shareArticle?url=https%3a%2f%2fnelsonweb.netlify.com%2fpost%2fejemplo-react-sortablejs%2f&title=Como%20utilizar%20react-sortablejs">
+                <i class="fa-fw fab fa-linkedin-in"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fnelsonweb.netlify.com%2fpost%2fejemplo-react-sortablejs%2f&t=Como%20utilizar%20react-sortablejs">
+                <i class="fa-fw fab fa-facebook-f"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://reddit.com/submit?url=https%3a%2f%2fnelsonweb.netlify.com%2fpost%2fejemplo-react-sortablejs%2f&title=Como%20utilizar%20react-sortablejs">
+                <i class="fa-fw fab fa-reddit-alien"></i>
+            </a>
+        </li>
+    </nav>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        
+                    </div>
+                </div><div class="row justify-content-center my-3">
+                    <div class="col-lg-8">
+                        <div id="commento"></div>
+                        <script src="https://commento.io"></script>
+                    </div>
+                </div></article>
+        </div>
+    </div>
+
+    
+</main>
+
+
+    <footer class="footer text-center bg-dark py-6">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <ul class="list-inline">
+                    <li class="list-inline-item">
+                            <a href="https://facebook.com" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-facebook fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://github.com/Nelson-developer" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://linkedin.com" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://stackoverflow.com" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                </ul>
+
+                <p class="text-muted">
+                    
+                        Copyright &copy; NelsonWeb 2020
+                    
+                </p>
+
+                <p class="text-muted">
+                Powered by <a href="https://gohugo.io" target="_blank">Hugo</a> with <a href="https://github.com/puresyntax71/hugo-theme-chunky-poster" target="_blank">Chunky Poster</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    
+    
+        
+            <script src="/dist/main.d608eadfe5ac0688902e.min.js"></script>
+        
+    
+
+
+
+<script>
+    window.Prism = window.Prism || {};
+    window.Prism.manual = true;
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/components/prism-core.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/plugins/autoloader/prism-autoloader.min.js"></script>
+
+
+
+
+
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-XXXX', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+</body>
+</html>

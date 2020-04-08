@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on NelsonWeb</title>
+    <link>https://nelsonweb.netlify.com/tags/</link>
+    <description>Recent content in Tags on NelsonWeb</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <lastBuildDate>Tue, 07 Apr 2020 19:06:25 -0600</lastBuildDate>
+    
+	<atom:link href="https://nelsonweb.netlify.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Cloudinary</title>
+      <link>https://nelsonweb.netlify.com/tags/cloudinary/</link>
+      <pubDate>Tue, 07 Apr 2020 19:06:25 -0600</pubDate>
+      
+      <guid>https://nelsonweb.netlify.com/tags/cloudinary/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Subida de imagenes</title>
+      <link>https://nelsonweb.netlify.com/tags/subida-de-imagenes/</link>
+      <pubDate>Tue, 07 Apr 2020 19:06:25 -0600</pubDate>
+      
+      <guid>https://nelsonweb.netlify.com/tags/subida-de-imagenes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vuejs</title>
+      <link>https://nelsonweb.netlify.com/tags/vuejs/</link>
+      <pubDate>Tue, 07 Apr 2020 19:06:25 -0600</pubDate>
+      
+      <guid>https://nelsonweb.netlify.com/tags/vuejs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>React</title>
+      <link>https://nelsonweb.netlify.com/tags/react/</link>
+      <pubDate>Tue, 07 Apr 2020 18:55:04 -0600</pubDate>
+      
+      <guid>https://nelsonweb.netlify.com/tags/react/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>React-sortable js</title>
+      <link>https://nelsonweb.netlify.com/tags/react-sortable-js/</link>
+      <pubDate>Tue, 07 Apr 2020 18:55:04 -0600</pubDate>
+      
+      <guid>https://nelsonweb.netlify.com/tags/react-sortable-js/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sortable js</title>
+      <link>https://nelsonweb.netlify.com/tags/sortable-js/</link>
+      <pubDate>Tue, 07 Apr 2020 18:55:04 -0600</pubDate>
+      
+      <guid>https://nelsonweb.netlify.com/tags/sortable-js/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Flask</title>
+      <link>https://nelsonweb.netlify.com/tags/flask/</link>
+      <pubDate>Sun, 05 Apr 2020 21:55:32 -0600</pubDate>
+      
+      <guid>https://nelsonweb.netlify.com/tags/flask/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Graphene</title>
+      <link>https://nelsonweb.netlify.com/tags/graphene/</link>
+      <pubDate>Sun, 05 Apr 2020 21:55:32 -0600</pubDate>
+      
+      <guid>https://nelsonweb.netlify.com/tags/graphene/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GraphQL</title>
+      <link>https://nelsonweb.netlify.com/tags/graphql/</link>
+      <pubDate>Sun, 05 Apr 2020 21:55:32 -0600</pubDate>
+      
+      <guid>https://nelsonweb.netlify.com/tags/graphql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://nelsonweb.netlify.com/tags/python/</link>
+      <pubDate>Sun, 05 Apr 2020 21:55:32 -0600</pubDate>
+      
+      <guid>https://nelsonweb.netlify.com/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>index</title>
+      <link>https://nelsonweb.netlify.com/tags/index/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://nelsonweb.netlify.com/tags/index/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

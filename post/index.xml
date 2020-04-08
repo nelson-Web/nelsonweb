@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on NelsonWeb</title>
+    <link>https://nelsonweb.netlify.com/post/</link>
+    <description>Recent content in Posts on NelsonWeb</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <lastBuildDate>Tue, 07 Apr 2020 19:06:25 -0600</lastBuildDate>
+    
+	<atom:link href="https://nelsonweb.netlify.com/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Como subir imagenes a Cloudinary con Vue js</title>
+      <link>https://nelsonweb.netlify.com/post/vuejs-and-cloudinary/</link>
+      <pubDate>Tue, 07 Apr 2020 19:06:25 -0600</pubDate>
+      
+      <guid>https://nelsonweb.netlify.com/post/vuejs-and-cloudinary/</guid>
+      <description>&lt;p&gt;En este ejemplo te mostrare como subir imagenes a los servidores de Cloudinary para esto ya debes tener una cuenta creada. Este servicio nos brinda un plan gratis si tu prefieres usarlo para practicar.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Como utilizar react-sortablejs</title>
+      <link>https://nelsonweb.netlify.com/post/ejemplo-react-sortablejs/</link>
+      <pubDate>Tue, 07 Apr 2020 18:55:04 -0600</pubDate>
+      
+      <guid>https://nelsonweb.netlify.com/post/ejemplo-react-sortablejs/</guid>
+      <description>&lt;p&gt;En este ejemplo practico te enseñare a usar &lt;a href=&#34;https://github.com/SortableJS/react-sortablejs&#34;&gt;react-sortablejs&lt;/a&gt; el cual es una libreria de JavaScript la cual sirve para implementar &lt;strong&gt;drag and drop&lt;/strong&gt; en tu sitio web o aplicación.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Como usar Graphene con Flask</title>
+      <link>https://nelsonweb.netlify.com/post/python-graphene/</link>
+      <pubDate>Sun, 05 Apr 2020 21:55:32 -0600</pubDate>
+      
+      <guid>https://nelsonweb.netlify.com/post/python-graphene/</guid>
+      <description>&lt;p&gt;En este ejemplo practico te enseñare a usar Graphene que es una biblioteca para construir una API GraphQL en Python fácilmente. Para esto utilizaremos el microframework web Flask.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
