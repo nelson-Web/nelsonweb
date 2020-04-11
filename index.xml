@@ -12,6 +12,15 @@
     
     
     <item>
+      <title>Algunos metodos para Arreglos en MongoDB que deberias saber</title>
+      <link>https://nelsonweb.netlify.com/post/arrays-mongodb/</link>
+      <pubDate>Fri, 10 Apr 2020 13:06:04 -0600</pubDate>
+      
+      <guid>https://nelsonweb.netlify.com/post/arrays-mongodb/</guid>
+      <description>&lt;p&gt;En este ejemplo practico te mostrare algunos metodos o &lt;strong&gt;operadores&lt;/strong&gt; de MongoDB para trabajar con arreglos&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Como subir imagenes a Cloudinary con Vue js</title>
       <link>https://nelsonweb.netlify.com/post/vuejs-and-cloudinary/</link>
       <pubDate>Tue, 07 Apr 2020 19:06:25 -0600</pubDate>
