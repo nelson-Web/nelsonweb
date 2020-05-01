@@ -3,22 +3,32 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://nelsonweb.netlify.com/tags/javascript/</loc>
+    <lastmod>2020-05-01T10:27:28-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nelsonweb.netlify.com/post/fechas-en-javascript/</loc>
+    <lastmod>2020-05-01T10:27:28-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nelsonweb.netlify.com/post/</loc>
+    <lastmod>2020-05-01T10:27:28-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nelsonweb.netlify.com/tags/</loc>
+    <lastmod>2020-05-01T10:27:28-06:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://nelsonweb.netlify.com/post/arrays-mongodb/</loc>
     <lastmod>2020-04-10T13:06:04-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://nelsonweb.netlify.com/tags/mongodb/</loc>
-    <lastmod>2020-04-10T13:06:04-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://nelsonweb.netlify.com/post/</loc>
-    <lastmod>2020-04-10T13:06:04-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://nelsonweb.netlify.com/tags/</loc>
     <lastmod>2020-04-10T13:06:04-06:00</lastmod>
   </url>
   

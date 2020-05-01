@@ -12,6 +12,15 @@
     
     
     <item>
+      <title>Metodos de fechas en JavaScript</title>
+      <link>https://nelsonweb.netlify.com/post/fechas-en-javascript/</link>
+      <pubDate>Fri, 01 May 2020 10:27:28 -0600</pubDate>
+      
+      <guid>https://nelsonweb.netlify.com/post/fechas-en-javascript/</guid>
+      <description>&lt;p&gt;Estos son algunos metodos de fechas que quizas no conocias  cuando trabajamos con JavaScript.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Algunos metodos para Arreglos en MongoDB que deberias saber</title>
       <link>https://nelsonweb.netlify.com/post/arrays-mongodb/</link>
       <pubDate>Fri, 10 Apr 2020 13:06:04 -0600</pubDate>

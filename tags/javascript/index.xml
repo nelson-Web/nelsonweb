@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on NelsonWeb</title>
-    <link>https://nelsonweb.netlify.com/post/</link>
-    <description>Recent content in Posts on NelsonWeb</description>
+    <title>JavaScript on NelsonWeb</title>
+    <link>https://nelsonweb.netlify.com/tags/javascript/</link>
+    <description>Recent content in JavaScript on NelsonWeb</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es</language>
     <lastBuildDate>Fri, 01 May 2020 10:27:28 -0600</lastBuildDate>
     
-	<atom:link href="https://nelsonweb.netlify.com/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://nelsonweb.netlify.com/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,15 +18,6 @@
       
       <guid>https://nelsonweb.netlify.com/post/fechas-en-javascript/</guid>
       <description>&lt;p&gt;Estos son algunos metodos de fechas que quizas no conocias  cuando trabajamos con JavaScript.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Algunos metodos para Arreglos en MongoDB que deberias saber</title>
-      <link>https://nelsonweb.netlify.com/post/arrays-mongodb/</link>
-      <pubDate>Fri, 10 Apr 2020 13:06:04 -0600</pubDate>
-      
-      <guid>https://nelsonweb.netlify.com/post/arrays-mongodb/</guid>
-      <description>&lt;p&gt;En este ejemplo practico te mostrare algunos metodos o &lt;strong&gt;operadores&lt;/strong&gt; de MongoDB para trabajar con arreglos&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -45,15 +36,6 @@
       
       <guid>https://nelsonweb.netlify.com/post/ejemplo-react-sortablejs/</guid>
       <description>&lt;p&gt;En este ejemplo practico te enseñare a usar &lt;a href=&#34;https://github.com/SortableJS/react-sortablejs&#34;&gt;react-sortablejs&lt;/a&gt; el cual es una libreria de JavaScript la cual sirve para implementar &lt;strong&gt;drag and drop&lt;/strong&gt; en tu sitio web o aplicación.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Como usar Graphene con Flask</title>
-      <link>https://nelsonweb.netlify.com/post/python-graphene/</link>
-      <pubDate>Sun, 05 Apr 2020 21:55:32 -0600</pubDate>
-      
-      <guid>https://nelsonweb.netlify.com/post/python-graphene/</guid>
-      <description>&lt;p&gt;En este ejemplo practico te enseñare a usar Graphene que es una biblioteca para construir una API GraphQL en Python fácilmente. Para esto utilizaremos el microframework web Flask.&lt;/p&gt;</description>
     </item>
     
   </channel>
