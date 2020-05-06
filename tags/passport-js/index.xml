@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>MongoDB on NelsonWeb</title>
-    <link>https://nelsonweb.netlify.com/tags/mongodb/</link>
-    <description>Recent content in MongoDB on NelsonWeb</description>
+    <title>Passport JS on NelsonWeb</title>
+    <link>https://nelsonweb.netlify.com/tags/passport-js/</link>
+    <description>Recent content in Passport JS on NelsonWeb</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es</language>
     <lastBuildDate>Wed, 06 May 2020 09:41:06 -0600</lastBuildDate>
     
-	<atom:link href="https://nelsonweb.netlify.com/tags/mongodb/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://nelsonweb.netlify.com/tags/passport-js/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,15 +18,6 @@
       
       <guid>https://nelsonweb.netlify.com/post/passportjs-facebook-jwt/</guid>
       <description>&lt;p&gt;En este ejemplo te enseñare como crear un login social de una manera muy simple con 10 pasos.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Algunos metodos para Arreglos en MongoDB que deberias saber</title>
-      <link>https://nelsonweb.netlify.com/post/arrays-mongodb/</link>
-      <pubDate>Fri, 10 Apr 2020 13:06:04 -0600</pubDate>
-      
-      <guid>https://nelsonweb.netlify.com/post/arrays-mongodb/</guid>
-      <description>&lt;p&gt;En este ejemplo practico te mostrare algunos metodos o &lt;strong&gt;operadores&lt;/strong&gt; de MongoDB para trabajar con arreglos&lt;/p&gt;</description>
     </item>
     
   </channel>

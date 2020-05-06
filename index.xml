@@ -12,6 +12,15 @@
     
     
     <item>
+      <title>Como usar Passport JS con facebook, JWT, MongoDB, Express JS y Vue JS</title>
+      <link>https://nelsonweb.netlify.com/post/passportjs-facebook-jwt/</link>
+      <pubDate>Wed, 06 May 2020 09:41:06 -0600</pubDate>
+      
+      <guid>https://nelsonweb.netlify.com/post/passportjs-facebook-jwt/</guid>
+      <description>&lt;p&gt;En este ejemplo te enseñare como crear un login social de una manera muy simple con 10 pasos.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Metodos de fechas en JavaScript</title>
       <link>https://nelsonweb.netlify.com/post/fechas-en-javascript/</link>
       <pubDate>Fri, 01 May 2020 10:27:28 -0600</pubDate>
@@ -62,6 +71,15 @@
       <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
       
       <guid>https://nelsonweb.netlify.com/acerca-de/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://nelsonweb.netlify.com/post/</link>
+      <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://nelsonweb.netlify.com/post/</guid>
       <description></description>
     </item>
     

@@ -6,10 +6,19 @@
     <description>Recent content in Posts on NelsonWeb</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es</language>
-    <lastBuildDate>Fri, 01 May 2020 10:27:28 -0600</lastBuildDate>
+    <lastBuildDate>Wed, 06 May 2020 09:41:06 -0600</lastBuildDate>
     
 	<atom:link href="https://nelsonweb.netlify.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Como usar Passport JS con facebook, JWT, MongoDB, Express JS y Vue JS</title>
+      <link>https://nelsonweb.netlify.com/post/passportjs-facebook-jwt/</link>
+      <pubDate>Wed, 06 May 2020 09:41:06 -0600</pubDate>
+      
+      <guid>https://nelsonweb.netlify.com/post/passportjs-facebook-jwt/</guid>
+      <description>&lt;p&gt;En este ejemplo te enseñare como crear un login social de una manera muy simple con 10 pasos.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Metodos de fechas en JavaScript</title>
