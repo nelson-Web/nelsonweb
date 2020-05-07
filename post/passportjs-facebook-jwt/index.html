@@ -216,7 +216,6 @@ const {Schema} = mongoose;
 
 const userSchema = new Schema({
     email: String,
-    password:String,
     firstname: String,
     last_name: String,
     imagen:String,
@@ -282,8 +281,8 @@ passport.use(
   &quot;sign-up-facebook&quot;,
   new FacebookStrategy(
     {
-      clientID: 2576357032629101111111117, // coloca tu propio clientID
-      clientSecret: &quot;3af7d2f7630645b43ef7791111111c148e3ce8d&quot;,// coloca tu propio secret
+      clientID: 2576357032, // coloca tu propio clientID
+      clientSecret: &quot;3af7d2f7630648e3ce8d&quot;,// coloca tu propio secret
       callbackURL: &quot;http://localhost:3000/auth/facebook/signin&quot;,
       profileFields: [&quot;email&quot;, &quot;name&quot;, &quot;photos&quot;],
     },
