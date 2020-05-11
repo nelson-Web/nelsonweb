@@ -9,7 +9,7 @@
      Como subir imagenes a Cloudinary con Vue js | 
     NelsonWeb
   
-</title><meta name="description" content="Blog de contenido web y Linux"><meta name="author" content="Nelson Hernandez">
+</title><meta name="description" content="Blog de programacion web backend y frontend"><meta name="author" content="Nelsonweb">
 
 
     
@@ -84,8 +84,8 @@
                     <div class="col-lg-8">
                         <div class="meta text-muted mb-3">
                             <p class="created text-muted text-uppercase font-weight-bold mb-1">April 7, 2020</p>
-                            <span class="mr-2"><i class="fas fa-book-open mr-2"></i>423 words</span>
-                            <span><i class="fas fa-clock mr-2"></i>2 mins read</span>
+                            <span class="mr-2"><i class="fas fa-book-open mr-2"></i></span>
+                            <span><i class="fas fa-clock mr-2"></i></span>
                         </div>
 
                         <h1>Como subir imagenes a Cloudinary con Vue js</h1>
@@ -94,7 +94,7 @@
                     </div>
                 </div><div class="row justify-content-center mb-3">
                                 <div class="col-lg-10">
-                                    <img data-src="/images/vuejs-cloudinary_hucd03819e96039a10e18f3299cedebd94_118230_900x500_fit_box_2.png" class="img-fluid rounded mx-auto d-block" alt="Como subir imagenes a Cloudinary con Vue js">
+                                    <img loading="lazy" data-src="/images/vuejs-cloudinary_hucd03819e96039a10e18f3299cedebd94_118230_900x500_fit_box_2.png" class="img-fluid rounded mx-auto d-block" alt="Como subir imagenes a Cloudinary con Vue js">
                                 </div>
                             </div><div class="row justify-content-center">
                     <div class="col-lg-8">
@@ -119,7 +119,7 @@
     &lt;/form&gt;
 
 </code></pre>
-<p><img src="https://res.cloudinary.com/nelsonweb/image/upload/v1586358272/formulario_fhtggq.png" class="img-fluid rounded mx-auto d-block" alt="imagen-tamaño"></p>
+<p><img loading="lazy" src="https://res.cloudinary.com/nelsonweb/image/upload/v1586358272/formulario_fhtggq.png" class="img-fluid rounded mx-auto d-block" alt="imagen-tamaño"></p>
 <ol start="3">
 <li>Creamos la función para obtener los valores de la imagen</li>
 </ol>
@@ -138,19 +138,19 @@ export default {
 &lt;/script&gt;
 </code></pre>
 <p>Al subir imagen de nuestro computador obtenemos por consola esto</p>
-<p><img src="https://res.cloudinary.com/nelsonweb/image/upload/v1586358270/console_m9yifp.jpg" class="img-fluid rounded mx-auto d-block" alt="consola"></p>
+<p><img loading="lazy" src="https://res.cloudinary.com/nelsonweb/image/upload/v1586358270/console_m9yifp.jpg" class="img-fluid rounded mx-auto d-block" alt="consola"></p>
 <ol start="4">
 <li>Obtenemos la url</li>
 </ol>
 <p>Para esto necesitamos ubicarnos en nuestro dashboard obtener la url o ruta para subir la imagen y el preset que servira para tener acceso a nuestra cuenta asi nadie podra subir la imagen hasta que tenga autorizacion o el &ldquo;preset&rdquo;</p>
-<p><img src="https://res.cloudinary.com/nelsonweb/image/upload/v1586358276/url_xvvszy.png" class="img-fluid rounded mx-auto d-block" alt="url cloudinary"></p>
+<p><img loading="lazy" src="https://res.cloudinary.com/nelsonweb/image/upload/v1586358276/url_xvvszy.png" class="img-fluid rounded mx-auto d-block" alt="url cloudinary"></p>
 <ol start="5">
 <li>Obtenemos el preset</li>
 </ol>
 <p>Para esto nos ubicamos en <strong>configuraciones</strong>&gt;upload</p>
-<p><img src="https://res.cloudinary.com/nelsonweb/image/upload/v1586358275/upload_whgptv.png" class="img-fluid rounded mx-auto d-block" alt="configuraciones"></p>
+<p><img loading="lazy" src="https://res.cloudinary.com/nelsonweb/image/upload/v1586358275/upload_whgptv.png" class="img-fluid rounded mx-auto d-block" alt="configuraciones"></p>
 <p>Luego bajamos a la opción <strong>Upload Presets</strong> damos click en <strong>Enable unsigned uploading</strong> y el genera un preset que vamos a utilizar</p>
-<p><img src="https://res.cloudinary.com/nelsonweb/image/upload/v1586358272/preset_ozplbr.png" class="img-fluid rounded mx-auto d-block" alt="Upload Presets"></p>
+<p><img loading="lazy" src="https://res.cloudinary.com/nelsonweb/image/upload/v1586358272/preset_ozplbr.png" class="img-fluid rounded mx-auto d-block" alt="Upload Presets"></p>
 <ol start="6">
 <li>Creamos la función para guardar nuestras imagenes en Cloudinary</li>
 </ol>
@@ -189,7 +189,7 @@ export default {
 <ol start="7">
 <li>Obtenemos la url de la imagen como respuesta</li>
 </ol>
-<p><img src="https://res.cloudinary.com/nelsonweb/image/upload/v1586358273/response-cloudinary_b5df4m_gsv4li.png" class="img-fluid rounded mx-auto d-block" alt="url-imagen-console"></p>
+<p><img loading="lazy" src="https://res.cloudinary.com/nelsonweb/image/upload/v1586358273/response-cloudinary_b5df4m_gsv4li.png" class="img-fluid rounded mx-auto d-block" alt="url-imagen-console"></p>
 <p><strong>Repositorio en Github</strong> <a href="https://github.com/nelson-Web/cloudinary-and-vuejs-example">enlace</a></p>
                         </div><div class="tags my-3"><a class="badge badge-pill badge-light border mr-2" href="/tags/vuejs">
                                     <i class="fas fa-tag mr-2"></i>Vuejs

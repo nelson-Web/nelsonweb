@@ -6,7 +6,7 @@
     <description>Recent content in Tags on NelsonWeb</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es</language>
-    <lastBuildDate>Wed, 06 May 2020 09:41:06 -0600</lastBuildDate>
+    <lastBuildDate>Mon, 11 May 2020 12:57:47 -0600</lastBuildDate>
     
 	<atom:link href="https://nelsonweb.netlify.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,16 +14,25 @@
     <item>
       <title>Express JS</title>
       <link>https://nelsonweb.netlify.com/tags/express-js/</link>
-      <pubDate>Wed, 06 May 2020 09:41:06 -0600</pubDate>
+      <pubDate>Mon, 11 May 2020 12:57:47 -0600</pubDate>
       
       <guid>https://nelsonweb.netlify.com/tags/express-js/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>JavaScript</title>
+      <link>https://nelsonweb.netlify.com/tags/javascript/</link>
+      <pubDate>Mon, 11 May 2020 12:57:47 -0600</pubDate>
+      
+      <guid>https://nelsonweb.netlify.com/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Json Web Token</title>
       <link>https://nelsonweb.netlify.com/tags/json-web-token/</link>
-      <pubDate>Wed, 06 May 2020 09:41:06 -0600</pubDate>
+      <pubDate>Mon, 11 May 2020 12:57:47 -0600</pubDate>
       
       <guid>https://nelsonweb.netlify.com/tags/json-web-token/</guid>
       <description></description>
@@ -32,7 +41,7 @@
     <item>
       <title>MongoDB</title>
       <link>https://nelsonweb.netlify.com/tags/mongodb/</link>
-      <pubDate>Wed, 06 May 2020 09:41:06 -0600</pubDate>
+      <pubDate>Mon, 11 May 2020 12:57:47 -0600</pubDate>
       
       <guid>https://nelsonweb.netlify.com/tags/mongodb/</guid>
       <description></description>
@@ -41,9 +50,18 @@
     <item>
       <title>Passport JS</title>
       <link>https://nelsonweb.netlify.com/tags/passport-js/</link>
-      <pubDate>Wed, 06 May 2020 09:41:06 -0600</pubDate>
+      <pubDate>Mon, 11 May 2020 12:57:47 -0600</pubDate>
       
       <guid>https://nelsonweb.netlify.com/tags/passport-js/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>React JS</title>
+      <link>https://nelsonweb.netlify.com/tags/react-js/</link>
+      <pubDate>Mon, 11 May 2020 12:57:47 -0600</pubDate>
+      
+      <guid>https://nelsonweb.netlify.com/tags/react-js/</guid>
       <description></description>
     </item>
     
@@ -53,15 +71,6 @@
       <pubDate>Wed, 06 May 2020 09:41:06 -0600</pubDate>
       
       <guid>https://nelsonweb.netlify.com/tags/vue-js/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>JavaScript</title>
-      <link>https://nelsonweb.netlify.com/tags/javascript/</link>
-      <pubDate>Fri, 01 May 2020 10:27:28 -0600</pubDate>
-      
-      <guid>https://nelsonweb.netlify.com/tags/javascript/</guid>
       <description></description>
     </item>
     
@@ -93,16 +102,7 @@
     </item>
     
     <item>
-      <title>React</title>
-      <link>https://nelsonweb.netlify.com/tags/react/</link>
-      <pubDate>Tue, 07 Apr 2020 18:55:04 -0600</pubDate>
-      
-      <guid>https://nelsonweb.netlify.com/tags/react/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>React-sortable js</title>
+      <title>React-sortable JS</title>
       <link>https://nelsonweb.netlify.com/tags/react-sortable-js/</link>
       <pubDate>Tue, 07 Apr 2020 18:55:04 -0600</pubDate>
       
@@ -111,7 +111,7 @@
     </item>
     
     <item>
-      <title>Sortable js</title>
+      <title>Sortable JS</title>
       <link>https://nelsonweb.netlify.com/tags/sortable-js/</link>
       <pubDate>Tue, 07 Apr 2020 18:55:04 -0600</pubDate>
       

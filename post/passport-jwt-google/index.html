@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<title>
+  
+     Como usar Passport JS con Google, JWT, MongoDB, Express JS y React JS | 
+    NelsonWeb
+  
+</title><meta name="description" content="Blog de programacion web backend y frontend"><meta name="author" content="Nelsonweb">
+
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/themes/prism.min.css">
+    
+
+
+
+    
+        
+            <link rel="stylesheet" href="/dist/main.37ab3f61b95417873748.min.css">
+        
+    
+
+
+
+
+<link rel="canonical" href="https://nelsonweb.netlify.com/post/passport-jwt-google/"><meta property="og:title" content="Como usar Passport JS con Google, JWT, MongoDB, Express JS y React JS" />
+<meta property="og:description" content="En este ejemplo te enseñare como crear un login social de una manera muy simple con 10 pasos." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://nelsonweb.netlify.com/post/passport-jwt-google/" />
+<meta property="og:image" content="https://nelsonweb.netlify.com/passport-jwt-google.png" />
+<meta property="article:published_time" content="2020-05-11T12:57:47-06:00" />
+<meta property="article:modified_time" content="2020-05-11T12:57:47-06:00" />
+<meta itemprop="name" content="Como usar Passport JS con Google, JWT, MongoDB, Express JS y React JS">
+<meta itemprop="description" content="En este ejemplo te enseñare como crear un login social de una manera muy simple con 10 pasos.">
+<meta itemprop="datePublished" content="2020-05-11T12:57:47-06:00" />
+<meta itemprop="dateModified" content="2020-05-11T12:57:47-06:00" />
+<meta itemprop="wordCount" content="1295">
+<meta itemprop="image" content="https://nelsonweb.netlify.com/passport-jwt-google.png">
+
+
+
+<meta itemprop="keywords" content="Json Web Token,Passport JS,MongoDB,Express JS,React JS,JavaScript," /><meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://nelsonweb.netlify.com/passport-jwt-google.png"/>
+
+<meta name="twitter:title" content="Como usar Passport JS con Google, JWT, MongoDB, Express JS y React JS"/>
+<meta name="twitter:description" content="En este ejemplo te enseñare como crear un login social de una manera muy simple con 10 pasos."/>
+
+</head>
+<body>
+    
+<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top shadow-sm" id="navbar-main-menu">
+    <div class="container">
+        <a class="navbar-brand font-weight-bold" href="https://nelsonweb.netlify.com/">NelsonWeb</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="main-menu">
+            <ul class="navbar-nav ml-auto">
+                
+                    <li class="nav-item"><a class="nav-link" href="/">Inicio</a></li>
+                
+                    <li class="nav-item"><a class="nav-link" href="/acerca-de/">Acerca de</a></li>
+                
+                    <li class="nav-item"><a class="nav-link" href="/post/">Posts</a></li>
+                
+            
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+    
+<main class="content-page container pt-7 pb-5">
+    
+    <div class="row">
+        <div class="col">
+            <article>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="meta text-muted mb-3">
+                            <p class="created text-muted text-uppercase font-weight-bold mb-1">May 11, 2020</p>
+                            <span class="mr-2"><i class="fas fa-book-open mr-2"></i></span>
+                            <span><i class="fas fa-clock mr-2"></i></span>
+                        </div>
+
+                        <h1>Como usar Passport JS con Google, JWT, MongoDB, Express JS y React JS</h1>
+
+                        
+                    </div>
+                </div><div class="row justify-content-center mb-3">
+                                <div class="col-lg-10">
+                                    <img data-src="/images/passport-jwt-google_hu98c95b63178d559b77c829bc5e6146e8_74460_900x500_fit_box_2.png" class="img-fluid rounded mx-auto d-block" alt="Como usar Passport JS con Google, JWT, MongoDB, Express JS y React JS">
+                                </div>
+                            </div><div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="content">
+                            <p>En este ejemplo te enseñare como crear un login social de una manera muy simple con 10 pasos.</p>
+<p><a href="https://github.com/nelson-Web/passportjs-jwt-google">enlace del repositorio de ejemplo</a></p>
+<h4 id="indice">Indice</h4>
+<ol>
+<li>Instalación de dependencias en el backend.</li>
+<li>Estructura del backend.</li>
+<li>Creación del servidor Express JS.</li>
+<li>Conexión a la base de datos MongoDB</li>
+<li>Creación de Schema de base de datos MongoDB.</li>
+<li>Configuracion de Passport JS con Google.</li>
+<li>Creación de rutas de Registro e Inicio de Sesión.</li>
+<li>Creación de boton de de Registrarse e Inicio de Sesion con React JS</li>
+<li>Configuracion de Passport-JWT</li>
+<li>Creacion de ruta protegida</li>
+</ol>
+<h4 id="1-instalación-de-dependencias-en-el-backend">1) Instalación de dependencias en el backend.</h4>
+<pre><code class="language-Bash">npm install express passport passport-google-oauth passport-jwt cors jsonwebtoken &amp;&amp; npm install nodemon -D
+
+</code></pre>
+<h4 id="2-estructura-del-backend">2) Estructura del backend.</h4>
+<pre><code>--src/
+  models/
+        user.js
+  passport/
+         facebook-auth.js
+         verify-token.js
+  routes/
+       routes.js
+       rutasProtegidas.js
+  -server.js
+  --database.js
+
+.babelrc
+-package.json
+</code></pre>
+<p><strong>Extra</strong></p>
+<p>Para este ejemplo decidi usar Babel JS para tener las ultimas caracteristicas de JavaSCript</p>
+<h4 id="instalacion-de-dependencias-de-babel-js">Instalacion de dependencias de Babel JS</h4>
+<pre><code>npm install --save-dev @babel/core @babel/cli @babel/preset-env @babel/node
+
+</code></pre>
+<p>Configuracion de Babel JS para el backend
+<strong>.babelrc</strong></p>
+<pre><code>{
+    &quot;presets&quot;: [
+        &quot;@babel/preset-env&quot;
+    ]
+}
+</code></pre>
+<p><strong>package.json</strong></p>
+<pre><code class="language-json">{
+  &quot;name&quot;: &quot;passportjs-google-jwt&quot;,
+  &quot;version&quot;: &quot;1.0.0&quot;,
+  &quot;description&quot;: &quot;&quot;,
+  &quot;main&quot;: &quot;server.js&quot;,
+  &quot;scripts&quot;: {
+    &quot;build&quot;: &quot;babel src -d dist --source-maps&quot;,
+    &quot;dev&quot;: &quot;nodemon src/server.js --exec babel-node&quot;
+  },
+  &quot;keywords&quot;: [],
+  &quot;author&quot;: &quot;&quot;,
+  &quot;license&quot;: &quot;ISC&quot;,
+  &quot;dependencies&quot;: {
+    &quot;@babel/polyfill&quot;: &quot;^7.8.7&quot;,
+    &quot;cors&quot;: &quot;^2.8.5&quot;,
+    &quot;express&quot;: &quot;^4.17.1&quot;,
+    &quot;jsonwebtoken&quot;: &quot;^8.5.1&quot;,
+    &quot;mongoose&quot;: &quot;^5.9.12&quot;,
+    &quot;morgan&quot;: &quot;^1.10.0&quot;,
+    &quot;passport&quot;: &quot;^0.4.1&quot;,
+    &quot;passport-google-oauth&quot;: &quot;^2.0.0&quot;,
+    &quot;passport-jwt&quot;: &quot;^4.0.0&quot;
+  },
+  &quot;devDependencies&quot;: {
+    &quot;@babel/cli&quot;: &quot;^7.8.4&quot;,
+    &quot;@babel/core&quot;: &quot;^7.9.6&quot;,
+    &quot;@babel/node&quot;: &quot;^7.8.7&quot;,
+    &quot;@babel/preset-env&quot;: &quot;^7.9.6&quot;,
+    &quot;nodemon&quot;: &quot;^2.0.3&quot;
+  }
+}
+</code></pre>
+<h4 id="3-creación-del-servidor-express-js">3) Creación del servidor Express JS.</h4>
+<p>crearemos un servidor muy sencillo con el framework de Node JS</p>
+<p><strong>src/server.js</strong></p>
+<pre><code class="language-JavaScript">import express, {json, urlencoded} from &quot;express&quot;
+import morgan from &quot;morgan&quot;;
+import passport from &quot;passport&quot;;
+import cors from &quot;cors&quot;;
+const app = express()
+
+//middlewares
+app.use(passport.initialize());
+app.use(morgan('dev'))// para ver los estados http de las peticiones
+app.use(express.json());
+app.use(express.urlencoded({extended:false}))
+app.use(cors())
+
+//importando rutas
+import routes from &quot;./routes/routes&quot;;
+app.use('/', routes);
+
+//Creando servidor
+import  {conectarDatabase} from &quot;./database&quot;; //importando funcion para conectar ala base de datos
+let puerto = process.env.PORT || 4000
+app.listen(puerto, () =&gt; {
+    console.log(`server on port ${puerto}`)
+    conectarDatabase()
+})
+</code></pre>
+<h4 id="4-conexión-a-la-base-de-datos-mongodb">4) Conexión a la base de datos MongoDB</h4>
+<p><strong>src/database.js</strong></p>
+<pre><code class="language-JavaScript">import { connect } from &quot;mongoose&quot;;
+
+export function conectarDatabase() {
+  try {
+    connect(&quot;mongodb://localhost:27017/googlepassport&quot;, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true
+    });
+    console.log('conectado a MongoDB');
+    
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+
+</code></pre>
+<h4 id="5-creación-de-schema-de-base-de-datos-mongodb">5) Creación de Schema de base de datos MongoDB.</h4>
+<p>Este modelo esta basado en la informacion que nos comparte Google</p>
+<p><strong>src/models/user.js</strong></p>
+<pre><code class="language-JavaScript">import mongoose, { model, Schema } from 'mongoose';
+
+const userSchema = new Schema({
+    _id: String,
+    nombre: String,
+    avatar: String,
+    fechadeRegistro: {type: String, default: new Date().toISOString()}
+})
+export default model('users', userSchema);
+
+</code></pre>
+<h4 id="6-configuracion-de-passport-js-con-google">6) Configuracion de Passport JS con Google.</h4>
+<p>Creamos un estrategia, para usar la autenticación de Google, primero debe crear una aplicación en <a href="https://console.developers.google.com/">Google API Console</a> en el cual obtendras:</p>
+<ul>
+<li>clientID</li>
+<li>clientSecret</li>
+</ul>
+<p>Define 2 Callbacks URL</p>
+<ol>
+<li>Para Registrarse</li>
+<li>Para Iniciar Sesión</li>
+</ol>
+<p><strong>src/passport/google-auth.js</strong></p>
+<pre><code class="language-JavaScript">import passport from &quot;passport&quot;;
+var GoogleStrategy = require(&quot;passport-google-oauth&quot;).OAuth2Strategy;
+
+const User = require(&quot;../models/user&quot;).default;
+
+passport.serializeUser((user, done) =&gt; {
+  done(null, user.id);
+});
+
+passport.deserializeUser(async (id, done) =&gt; {
+  const user = await User.findById(id);
+  done(null, user);
+});
+
+// Estrategia para Registrarse
+
+passport.use(&quot;sign-in-google&quot;,new GoogleStrategy(
+    {
+      clientID:&quot;ssjsjsjjsj111j1j1j1iiwjwnwwjww&quot;,
+      clientSecret: &quot;jsjsjsjjsjss&quot;,
+      callbackURL: &quot;http://localhost:4000/auth/google/callback&quot;,
+    },
+    async (accessToken, refreshToken, profile, done) =&gt; {
+      const user = await User.findById(profile.id); // si el usuario no existe 
+                                                    //lo creamos
+      if (user) {
+        done(null, false);
+      } else {
+        let newUser = new User();
+            newUser._id = profile.id
+            newUser.nombre = profile.displayName
+            newUser.avatar = profile.photos[0].value
+           await newUser.save() //guardamos en la base de datos
+        done(null, profile); //guardamos en la base de datos
+      }
+    }
+  )
+);
+
+
+// Estrategia para Iniciar Sesion
+
+
+passport.use(&quot;sign-up-google&quot;,new GoogleStrategy(
+  {
+    clientID:&quot;sjsjsjsjssswww&quot;,
+    clientSecret: &quot;sjsjsjsjsjsj&quot;,
+    callbackURL: &quot;http://localhost:4000/auth/google/signup&quot;,
+  },
+  async (accessToken, refreshToken, profile, done) =&gt; {
+    const user = await User.findById(profile.id);// si existe en la base de datos
+                                                 //  puede iniciar sesion
+    if (user) {
+      done(null, user)
+    } else {
+      done(null, false)
+    }
+    
+  }
+)
+);
+
+</code></pre>
+<h4 id="7-creación-de-rutas-de-registro-e-inicio-de-sesión">7) Creación de rutas de Registro e Inicio de Sesión.</h4>
+<p>Creamos las rutas y utilizaremos <strong>jsonwebtoken</strong> para poder crear un token con caducidad de <strong>24 horas</strong>.</p>
+<p>Para este ejemplo mandaremos al cliente el token por cookie lo recomendable es que le ponga otro nombre para hacer “un poco mas seguro el token” con fines educativos le coloque token</p>
+<p><strong>src/routes/routes.js</strong></p>
+<pre><code class="language-JavaScript">import { Router } from &quot;express&quot;;
+import passport from &quot;passport&quot;;
+import jwt from &quot;jsonwebtoken&quot;;
+const router = Router()
+
+//rutas para Google
+
+//ruta para Registrarse
+
+router.get(&quot;/auth/google/callback&quot;,passport.authenticate(&quot;sign-in-google&quot;, {scope: ['https://www.googleapis.com/auth/plus.login'], session: false }),
+  function (req, res) {
+    if (req.user) {
+      const token = jwt.sign({id: req.user._id}, 'top_secret', {
+        expiresIn: 60 * 60 * 24 // equivalente a 24 horas
+      })
+      res.cookie('token', token)        
+      res.redirect('http://localhost:3000/jugadores')
+
+    } else {
+      res.redirect('http://localhost:3000/registrarse')
+    }
+  }
+);
+
+
+//rutas para Iniciar Sesion
+router.get(
+  &quot;/auth/google/signup&quot;,
+  passport.authenticate(&quot;sign-up-google&quot;, {scope: ['https://www.googleapis.com/auth/plus.login'], session: false }),
+  function (req, res) {
+    if (req.user) { 
+      const token = jwt.sign({id: req.user._id}, 'top_secret', {
+        expiresIn: 60 * 60 * 24 // equivalente a 24 horas
+      })
+      res.cookie('token', token)        
+      res.redirect('http://localhost:3000/jugadores')
+    } else {
+      res.redirect('http://localhost:3000/iniciarsesion')
+    } 
+  }
+);
+
+export default router;
+</code></pre>
+<h4 id="8-creación-de-boton-de-de-registrarse-e-inicio-de-sesion-con-react-js">8) Creación de boton de de Registrarse e Inicio de Sesion con React JS</h4>
+<p>Para este ejemplo muy sencillo solo utilizaremos una etiqueta para indicarle la ruta que creamos en el servidor</p>
+<p><strong>Registrarse.js</strong></p>
+<pre><code class="language-JavaScript">import React from 'react'
+
+export default function Registrase() {
+    return (
+        &lt;div&gt;
+            &lt;a className=&quot;enlace&quot; href=&quot;http://localhost:4000/auth/google/callback&quot;&gt;Registrase con Google&lt;/a&gt;
+        &lt;/div&gt;
+    )
+}
+
+</code></pre>
+<p><strong>iniciarSesion.js</strong></p>
+<pre><code class="language-JavaScript">import React from 'react'
+
+export default function IniciarSesion() {
+    return (
+        &lt;div&gt;
+            &lt;a className=&quot;enlace&quot; href=&quot;http://localhost:4000/auth/google/signup&quot;&gt;Iniciar con Google&lt;/a&gt;
+        &lt;/div&gt;
+    )
+}
+
+</code></pre>
+<h4 id="configuracion-de-passport-jwt">Configuracion de Passport-JWT</h4>
+<p>Esta estrategia nos servira para usarla como <strong>middleware</strong> ya que con esta verificaremos el token que nos pasa el usuario.</p>
+<p>en <strong>secretOrKey</strong> pasamos el texto con el cual firmamos el token en la ruta</p>
+<p><strong>ExtractJWT.fromUrlQueryParameter(‘secret_token’)</strong> le indicamos a la estrategia que le pasaremos el token por un parametro llamado secret_token</p>
+<p><strong>src/passport/verify-token.js</strong></p>
+<pre><code class="language-JavaScript">const JWTstrategy = require('passport-jwt').Strategy;
+const passport = require('passport')
+
+const ExtractJWT = require('passport-jwt').ExtractJwt;
+
+//Esto verifica que el token enviado por el usuario es válido
+passport.use(new JWTstrategy({
+  //secreto que solíamos firmar nuestro JWT
+  secretOrKey : 'top_secret',
+  //esperamos que el usuario envíe el token como un parámetro de consulta con el nombre 'secret_token'
+  jwtFromRequest : ExtractJWT.fromUrlQueryParameter('secret_token')
+}, (token, done) =&gt; {
+  try {
+    //Pass the user details to the next middleware
+    return done(null, token);
+  } catch (error) {
+    done(error);
+  }
+}))
+</code></pre>
+<h4 id="creamos-la-vista-de-jugadores">Creamos la vista de jugadores</h4>
+<p>ESta es una vista en la cual si tenemos el token valido veremos los jugadores pintados en pantalla.
+Obtenemos el token definimos en el backend con <strong>document.cookie</strong></p>
+<pre><code class="language-JavaScript">import React, { useEffect, useState } from &quot;react&quot;;
+import axios from &quot;axios&quot;;
+export default function Jugadores() {
+  let valor = document.cookie.split(&quot;token=&quot;);
+  const [cookie] = useState(valor[1]);
+  const [jugadores, setjugadores] = useState([]);
+
+  useEffect(() =&gt; {
+    async function getJugadores() {
+      const response = await axios.get(`http://localhost:4000/api/jugadores?secret_token=${cookie}`)
+        setjugadores(response.data.jugadores)
+    };
+    getJugadores()
+  },[cookie]);
+  
+  return (
+    &lt;div&gt;
+      &lt;h1&gt;Jugadores&lt;/h1&gt;
+      &lt;div&gt;{cookie}&lt;/div&gt;
+      &lt;div&gt;
+        {jugadores.map(jugador =&gt;(
+           &lt;h1 key={jugador.id}&gt;{jugador.nombre}&lt;/h1&gt;
+        ))}
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
+}
+
+</code></pre>
+<h4 id="10-creacion-de-ruta-protegida">10) Creacion de ruta protegida</h4>
+<p>Para este ejemplo crearemos una ruta /jugadores la cual devuelve como json un arreglo de animales</p>
+<p>todas las rutas que pongamos en este archivo seran protegidas</p>
+<p><strong>src/routes/rutasProtegidas.js</strong></p>
+<pre><code class="language-JavaScript">import { Router } from &quot;express&quot;;
+const router = Router();
+
+router.get(&quot;/jugadores&quot;, (req, res, next) =&gt; {
+  let jugadores = [
+      { id: 1, nombre: &quot;Lebron James&quot; },
+      { id: 2, nombre: &quot;Kristaps Porziņģis&quot; },
+      { id: 3, nombre: &quot;Nelson Hernandez&quot; }
+    ];
+
+    res.json({&quot;jugadores&quot;: jugadores})
+  next();
+});
+
+export default router;
+
+</code></pre>
+<h4 id="finalmente-nuestro-srcserverjs">Finalmente nuestro src/server.js</h4>
+<p>importamos los ficheros de las estrategias</p>
+<p>app.use('/api’, passport.authenticate(‘jwt’, { session : false }), rutasProtegidas ); le estamos indicando que deben pasar por la estrategia para poder acceder a la ruta</p>
+<pre><code class="language-JavaScript">import express, {json, urlencoded} from &quot;express&quot;
+import morgan from &quot;morgan&quot;;
+import passport from &quot;passport&quot;;
+import cors from &quot;cors&quot;;
+const app = express()
+
+import('./passport/google-auth')
+import('./passport/verify-token')
+
+//middlewares
+app.use(passport.initialize());
+app.use(morgan('dev'))// para ver los estados http de las peticiones
+app.use(express.json());
+app.use(express.urlencoded({extended:false}))
+app.use(cors())
+
+//importando rutas
+import routes from &quot;./routes/routes&quot;;
+app.use('/', routes);
+import rutasProtegidas from &quot;./routes/rutasProtegidas&quot;;
+app.use('/api', passport.authenticate('jwt', { session : false }), rutasProtegidas );
+
+//Creando servidor
+import  {conectarDatabase} from &quot;./database&quot;; //importando funcion para conectar ala base de datos
+let puerto = process.env.PORT || 4000
+app.listen(puerto, () =&gt; {
+    console.log(`server on port ${puerto}`)
+    conectarDatabase()
+})
+</code></pre>
+<p><a href="https://github.com/nelson-Web/passportjs-jwt-google">enlace del repositorio de ejemplo</a></p>
+                        </div><div class="tags my-3"><a class="badge badge-pill badge-light border mr-2" href="/tags/json-web-token">
+                                    <i class="fas fa-tag mr-2"></i>Json Web Token
+                                </a><a class="badge badge-pill badge-light border mr-2" href="/tags/passport-js">
+                                    <i class="fas fa-tag mr-2"></i>Passport JS
+                                </a><a class="badge badge-pill badge-light border mr-2" href="/tags/mongodb">
+                                    <i class="fas fa-tag mr-2"></i>MongoDB
+                                </a><a class="badge badge-pill badge-light border mr-2" href="/tags/express-js">
+                                    <i class="fas fa-tag mr-2"></i>Express JS
+                                </a><a class="badge badge-pill badge-light border mr-2" href="/tags/react-js">
+                                    <i class="fas fa-tag mr-2"></i>React JS
+                                </a><a class="badge badge-pill badge-light border mr-2" href="/tags/javascript">
+                                    <i class="fas fa-tag mr-2"></i>JavaScript
+                                </a></div><ul class="share nav my-3 justify-content-end">
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://twitter.com/intent/tweet?url=https%3a%2f%2fnelsonweb.netlify.com%2fpost%2fpassport-jwt-google%2f&text=Como%20usar%20Passport%20JS%20con%20Google%2c%20JWT%2c%20MongoDB%2c%20Express%20JS%20y%20React%20JS">
+              <i class="fa-fw fab fa-twitter"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://www.linkedin.com/shareArticle?url=https%3a%2f%2fnelsonweb.netlify.com%2fpost%2fpassport-jwt-google%2f&title=Como%20usar%20Passport%20JS%20con%20Google%2c%20JWT%2c%20MongoDB%2c%20Express%20JS%20y%20React%20JS">
+                <i class="fa-fw fab fa-linkedin-in"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fnelsonweb.netlify.com%2fpost%2fpassport-jwt-google%2f&t=Como%20usar%20Passport%20JS%20con%20Google%2c%20JWT%2c%20MongoDB%2c%20Express%20JS%20y%20React%20JS">
+                <i class="fa-fw fab fa-facebook-f"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://reddit.com/submit?url=https%3a%2f%2fnelsonweb.netlify.com%2fpost%2fpassport-jwt-google%2f&title=Como%20usar%20Passport%20JS%20con%20Google%2c%20JWT%2c%20MongoDB%2c%20Express%20JS%20y%20React%20JS">
+                <i class="fa-fw fab fa-reddit-alien"></i>
+            </a>
+        </li>
+    </nav>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        
+                    </div>
+                </div><div class="row justify-content-center my-3">
+                    <div class="col-lg-8">
+                        <div id="commento"></div>
+                        <script src="https://commento.io"></script>
+                    </div>
+                </div></article>
+        </div>
+    </div>
+
+    <div class="related-content row mt-5 row-cols-1 row-cols-lg-3"><div class="col mb-3">
+                <div class="card h-100">
+    
+    <a href="/post/passportjs-facebook-jwt/" class="d-block"><img data-src="/images/passportjs-facebook_hub2620505ac6c54f51c81adaedae2c381_81991_700x350_resize_box_2.png" class="card-img-top mx-auto d-block" alt="Como usar Passport JS con facebook, JWT, MongoDB, Express JS y Vue JS"><div class="card-body">
+            <h4 class="card-title">Como usar Passport JS con facebook, JWT, MongoDB, Express JS y Vue JS</h4>
+            <p class="card-text text-muted text-uppercase">May 6, 2020</p>
+            <div class="card-text">
+                En este ejemplo te enseñare como crear un login social de una manera muy simple con 10 pasos.
+
+            </div>
+        </div>
+    </a>
+</div>
+
+            </div><div class="col mb-3">
+                <div class="card h-100">
+    
+    <a href="/post/ejemplo-react-sortablejs/" class="d-block"><img data-src="/images/react-sortable_hu1a816f62d85335282873b2becf8694c2_52602_700x350_resize_box_2.png" class="card-img-top mx-auto d-block" alt="Como utilizar react-sortablejs"><div class="card-body">
+            <h4 class="card-title">Como utilizar react-sortablejs</h4>
+            <p class="card-text text-muted text-uppercase">April 7, 2020</p>
+            <div class="card-text">
+                En este ejemplo practico te enseñare a usar react-sortablejs el cual es una libreria de JavaScript la cual sirve para implementar drag and drop en tu sitio web o aplicación.
+
+            </div>
+        </div>
+    </a>
+</div>
+
+            </div><div class="col mb-3">
+                <div class="card h-100">
+    
+    <a href="/post/fechas-en-javascript/" class="d-block"><img data-src="/images/fechas-javascript_huf768c23c1d7eada459955568c6d78e1f_45685_700x350_resize_box_2.png" class="card-img-top mx-auto d-block" alt="Metodos de fechas en JavaScript"><div class="card-body">
+            <h4 class="card-title">Metodos de fechas en JavaScript</h4>
+            <p class="card-text text-muted text-uppercase">May 1, 2020</p>
+            <div class="card-text">
+                Estos son algunos metodos de fechas que quizas no conocias cuando trabajamos con JavaScript.
+
+            </div>
+        </div>
+    </a>
+</div>
+
+            </div></div>
+</main>
+
+
+    <footer class="footer text-center bg-dark py-6">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <ul class="list-inline">
+                    <li class="list-inline-item">
+                            <a href="https://facebook.com" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-facebook fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://github.com/Nelson-developer" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://linkedin.com" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://stackoverflow.com" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                </ul>
+
+                <p class="text-muted">
+                    
+                        Copyright &copy; NelsonWeb 2020
+                    
+                </p>
+
+                <p class="text-muted">
+                Powered by <a href="https://gohugo.io" target="_blank">Hugo</a> with <a href="https://github.com/puresyntax71/hugo-theme-chunky-poster" target="_blank">Chunky Poster</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    
+    
+        
+            <script src="/dist/main.d608eadfe5ac0688902e.min.js"></script>
+        
+    
+
+
+
+<script>
+    window.Prism = window.Prism || {};
+    window.Prism.manual = true;
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/components/prism-core.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/plugins/autoloader/prism-autoloader.min.js"></script>
+
+
+
+
+
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-XXXX', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+</body>
+</html>

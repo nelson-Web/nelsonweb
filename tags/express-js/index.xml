@@ -6,10 +6,19 @@
     <description>Recent content in Express JS on NelsonWeb</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es</language>
-    <lastBuildDate>Wed, 06 May 2020 09:41:06 -0600</lastBuildDate>
+    <lastBuildDate>Mon, 11 May 2020 12:57:47 -0600</lastBuildDate>
     
 	<atom:link href="https://nelsonweb.netlify.com/tags/express-js/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Como usar Passport JS con Google, JWT, MongoDB, Express JS y React JS</title>
+      <link>https://nelsonweb.netlify.com/post/passport-jwt-google/</link>
+      <pubDate>Mon, 11 May 2020 12:57:47 -0600</pubDate>
+      
+      <guid>https://nelsonweb.netlify.com/post/passport-jwt-google/</guid>
+      <description>&lt;p&gt;En este ejemplo te enseñare como crear un login social de una manera muy simple con 10 pasos.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Como usar Passport JS con facebook, JWT, MongoDB, Express JS y Vue JS</title>
