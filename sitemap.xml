@@ -3,6 +3,46 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://nelsonweb.netlify.com/post/obtener-un-dato-mongodb/</loc>
+    <lastmod>2020-05-24T14:26:22-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nelsonweb.netlify.com/tags/mongodb/</loc>
+    <lastmod>2020-05-24T14:26:22-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nelsonweb.netlify.com/post/</loc>
+    <lastmod>2020-05-24T14:26:22-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nelsonweb.netlify.com/tags/</loc>
+    <lastmod>2020-05-24T14:26:22-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nelsonweb.netlify.com/post/flask-authlib-github/</loc>
+    <lastmod>2020-05-24T12:59:22-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nelsonweb.netlify.com/tags/flask/</loc>
+    <lastmod>2020-05-24T12:59:22-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nelsonweb.netlify.com/tags/github/</loc>
+    <lastmod>2020-05-24T12:59:22-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nelsonweb.netlify.com/tags/python/</loc>
+    <lastmod>2020-05-24T12:59:22-06:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://nelsonweb.netlify.com/post/passport-jwt-google/</loc>
     <lastmod>2020-05-11T12:57:47-06:00</lastmod>
   </url>
@@ -23,27 +63,12 @@
   </url>
   
   <url>
-    <loc>https://nelsonweb.netlify.com/tags/mongodb/</loc>
-    <lastmod>2020-05-11T12:57:47-06:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://nelsonweb.netlify.com/tags/passport-js/</loc>
     <lastmod>2020-05-11T12:57:47-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://nelsonweb.netlify.com/post/</loc>
-    <lastmod>2020-05-11T12:57:47-06:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://nelsonweb.netlify.com/tags/react-js/</loc>
-    <lastmod>2020-05-11T12:57:47-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://nelsonweb.netlify.com/tags/</loc>
     <lastmod>2020-05-11T12:57:47-06:00</lastmod>
   </url>
   
@@ -108,22 +133,12 @@
   </url>
   
   <url>
-    <loc>https://nelsonweb.netlify.com/tags/flask/</loc>
-    <lastmod>2020-04-05T21:55:32-06:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://nelsonweb.netlify.com/tags/graphene/</loc>
     <lastmod>2020-04-05T21:55:32-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://nelsonweb.netlify.com/tags/graphql/</loc>
-    <lastmod>2020-04-05T21:55:32-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://nelsonweb.netlify.com/tags/python/</loc>
     <lastmod>2020-04-05T21:55:32-06:00</lastmod>
   </url>
   

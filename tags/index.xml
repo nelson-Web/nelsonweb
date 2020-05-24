@@ -6,10 +6,46 @@
     <description>Recent content in Tags on NelsonWeb</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es</language>
-    <lastBuildDate>Mon, 11 May 2020 12:57:47 -0600</lastBuildDate>
+    <lastBuildDate>Sun, 24 May 2020 14:26:22 -0600</lastBuildDate>
     
 	<atom:link href="https://nelsonweb.netlify.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>MongoDB</title>
+      <link>https://nelsonweb.netlify.com/tags/mongodb/</link>
+      <pubDate>Sun, 24 May 2020 14:26:22 -0600</pubDate>
+      
+      <guid>https://nelsonweb.netlify.com/tags/mongodb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Flask</title>
+      <link>https://nelsonweb.netlify.com/tags/flask/</link>
+      <pubDate>Sun, 24 May 2020 12:59:22 -0600</pubDate>
+      
+      <guid>https://nelsonweb.netlify.com/tags/flask/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Github</title>
+      <link>https://nelsonweb.netlify.com/tags/github/</link>
+      <pubDate>Sun, 24 May 2020 12:59:22 -0600</pubDate>
+      
+      <guid>https://nelsonweb.netlify.com/tags/github/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://nelsonweb.netlify.com/tags/python/</link>
+      <pubDate>Sun, 24 May 2020 12:59:22 -0600</pubDate>
+      
+      <guid>https://nelsonweb.netlify.com/tags/python/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Express JS</title>
@@ -35,15 +71,6 @@
       <pubDate>Mon, 11 May 2020 12:57:47 -0600</pubDate>
       
       <guid>https://nelsonweb.netlify.com/tags/json-web-token/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>MongoDB</title>
-      <link>https://nelsonweb.netlify.com/tags/mongodb/</link>
-      <pubDate>Mon, 11 May 2020 12:57:47 -0600</pubDate>
-      
-      <guid>https://nelsonweb.netlify.com/tags/mongodb/</guid>
       <description></description>
     </item>
     
@@ -120,15 +147,6 @@
     </item>
     
     <item>
-      <title>Flask</title>
-      <link>https://nelsonweb.netlify.com/tags/flask/</link>
-      <pubDate>Sun, 05 Apr 2020 21:55:32 -0600</pubDate>
-      
-      <guid>https://nelsonweb.netlify.com/tags/flask/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Graphene</title>
       <link>https://nelsonweb.netlify.com/tags/graphene/</link>
       <pubDate>Sun, 05 Apr 2020 21:55:32 -0600</pubDate>
@@ -143,15 +161,6 @@
       <pubDate>Sun, 05 Apr 2020 21:55:32 -0600</pubDate>
       
       <guid>https://nelsonweb.netlify.com/tags/graphql/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python</title>
-      <link>https://nelsonweb.netlify.com/tags/python/</link>
-      <pubDate>Sun, 05 Apr 2020 21:55:32 -0600</pubDate>
-      
-      <guid>https://nelsonweb.netlify.com/tags/python/</guid>
       <description></description>
     </item>
     

@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<title>
+  
+     Como crear un login con Flask y Github | 
+    NelsonWeb
+  
+</title><meta name="description" content="Blog de programacion web backend y frontend"><meta name="author" content="Nelsonweb">
+
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/themes/prism.min.css">
+    
+
+
+
+    
+        
+            <link rel="stylesheet" href="/dist/main.37ab3f61b95417873748.min.css">
+        
+    
+
+
+
+
+<link rel="canonical" href="https://nelsonweb.netlify.com/post/flask-authlib-github/"><meta property="og:title" content="Como crear un login con Flask y Github" />
+<meta property="og:description" content="En este ejemplo practico te enseñare como crear un login con Flask y Github usando Authlib." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://nelsonweb.netlify.com/post/flask-authlib-github/" />
+<meta property="og:image" content="https://nelsonweb.netlify.com/flask-login-github.png" />
+<meta property="article:published_time" content="2020-05-24T12:59:22-06:00" />
+<meta property="article:modified_time" content="2020-05-24T12:59:22-06:00" />
+<meta itemprop="name" content="Como crear un login con Flask y Github">
+<meta itemprop="description" content="En este ejemplo practico te enseñare como crear un login con Flask y Github usando Authlib.">
+<meta itemprop="datePublished" content="2020-05-24T12:59:22-06:00" />
+<meta itemprop="dateModified" content="2020-05-24T12:59:22-06:00" />
+<meta itemprop="wordCount" content="479">
+<meta itemprop="image" content="https://nelsonweb.netlify.com/flask-login-github.png">
+
+
+
+<meta itemprop="keywords" content="Flask,Github,Python," /><meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://nelsonweb.netlify.com/flask-login-github.png"/>
+
+<meta name="twitter:title" content="Como crear un login con Flask y Github"/>
+<meta name="twitter:description" content="En este ejemplo practico te enseñare como crear un login con Flask y Github usando Authlib."/>
+
+</head>
+<body>
+    
+<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top shadow-sm" id="navbar-main-menu">
+    <div class="container">
+        <a class="navbar-brand font-weight-bold" href="https://nelsonweb.netlify.com/">NelsonWeb</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="main-menu">
+            <ul class="navbar-nav ml-auto">
+                
+                    <li class="nav-item"><a class="nav-link" href="/">Inicio</a></li>
+                
+                    <li class="nav-item"><a class="nav-link" href="/acerca-de/">Acerca de</a></li>
+                
+                    <li class="nav-item"><a class="nav-link" href="/post/">Posts</a></li>
+                
+            
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+    
+<main class="content-page container pt-7 pb-5">
+    
+    <div class="row">
+        <div class="col">
+            <article>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="meta text-muted mb-3">
+                            <p class="created text-muted text-uppercase font-weight-bold mb-1">May 24, 2020</p>
+                            <span class="mr-2"><i class="fas fa-book-open mr-2"></i></span>
+                            <span><i class="fas fa-clock mr-2"></i></span>
+                        </div>
+
+                        <h1>Como crear un login con Flask y Github</h1>
+
+                        
+                    </div>
+                </div><div class="row justify-content-center mb-3">
+                                <div class="col-lg-10">
+                                    <img loading="lazy" data-src="/images/flask-login-github_hu116f7c6e727b80ce244f865291d5c460_69089_900x500_fit_box_2.png" class="img-fluid rounded mx-auto d-block" alt="Como crear un login con Flask y Github">
+                                </div>
+                            </div><div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="content">
+                            <p>En este ejemplo practico te enseñare como crear un login con Flask y Github usando <strong>Authlib</strong>.</p>
+<h4 id="indice">Indice</h4>
+<ul>
+<li>Creación de entorno virtual</li>
+<li>Instalación de dependencias</li>
+<li>Creación de servidor Flask</li>
+<li>Configurar <a href="https://docs.authlib.org/en/latest/basic/install.html">Authlib</a> para colocar nuestras credenciales</li>
+<li>Creación de ruta login para redireccionar al callback URL</li>
+<li>Creación de callback URL</li>
+</ul>
+<p><strong>Creación de entorno virtual</strong>
+En este caso yo decidí usar virtualenv pero puedes usar pipenv si tu gustas.</p>
+<pre><code class="language-bash">virtualenv venv
+source ./venv/bin/activate # activa el entorno virtual
+</code></pre>
+<h4 id="instalación-de-dependencias">Instalación de dependencias</h4>
+<pre><code class="language-bash">pip install Authlib Flask requests
+
+</code></pre>
+<h4 id="creación-de-servidor-flask">Creación de servidor Flask</h4>
+<pre><code class="language-python">
+from flask import Flask
+
+
+app = Flask(__name__)
+
+
+if __name__ == &quot;__main__&quot;:
+    app.run(debug=True)
+</code></pre>
+<h4 id="configurar-authlib-para-colocar-nuestras-credenciales">Configurar Authlib para colocar nuestras credenciales</h4>
+<p>para esta configuracion necesitamos un <strong>secret_key</strong> , si tu prefieres puedes ponerla en una variable de entorno ya que es secreta.</p>
+<p><strong>oauth.register()</strong> le especificamos todas las configuraciones de Github, te recomiendo solo colocar tu <strong>client_id</strong> y <strong>client_secret</strong> los demas son por defecto.</p>
+<pre><code class="language-python">from flask import Flask, redirect, url_for, session
+from authlib.integrations.flask_client import OAuth
+
+app = Flask(__name__)
+
+
+app.secret_key = 'myscretkey'
+#configuraciones de oauth
+oauth = OAuth(app)
+github = oauth.register(
+    name='github',
+    client_id='',
+    client_secret='',
+    access_token_url='https://github.com/login/oauth/access_token',
+    access_token_params=None,
+    authorize_url='https://github.com/login/oauth/authorize',
+    authorize_params=None,
+    api_base_url='https://api.github.com/',
+    client_kwargs={'scope': 'user:email'},
+)
+
+
+if __name__ == &quot;__main__&quot;:
+    app.run(debug=True)
+</code></pre>
+<h4 id="creación-de-ruta-login-para-redireccionar-al-callback-url">Creación de ruta login para redireccionar al callback URL</h4>
+<p>Creamos una ruta <strong>/login</strong> la cual servira para redireccionar a la interfaz de facebook donde el usuario coloca su correo y contraseña.</p>
+<p><strong>oauth.create_client()</strong> creamos un nuevo cliente en este caso le llamaremos github .</p>
+<p><strong>url_for()</strong> indicamos la ruta de callback de github en este caso a la ruta le llame <strong>‘authorize’</strong>.</p>
+<p><strong>authorize_redirect()</strong> Crea un redireccionamiento HTTP para el punto final de autorización</p>
+<pre><code class="language-python">from flask import Flask, redirect, url_for, session
+from authlib.integrations.flask_client import OAuth
+
+app = Flask(__name__)
+
+
+app.secret_key = 'myscretkey'
+#configuraciones de oauth
+oauth = OAuth(app)
+github = oauth.register(
+    name='github',
+    client_id='',
+    client_secret='',
+    access_token_url='https://github.com/login/oauth/access_token',
+    access_token_params=None,
+    authorize_url='https://github.com/login/oauth/authorize',
+    authorize_params=None,
+    api_base_url='https://api.github.com/',
+    client_kwargs={'scope': 'user:email'},
+)
+
+@app.route(&quot;/&quot;)
+def index():
+    return f'Hola'
+
+
+@app.route('/login')
+def registro():
+    github = oauth.create_client('github')
+    redirect_uri = url_for('authorize', _external=True)
+    return github.authorize_redirect(redirect_uri)
+
+if __name__ == &quot;__main__&quot;:
+    app.run(debug=True)
+</code></pre>
+<h4 id="creación-de-callback-url">Creación de callback URL</h4>
+<p>Creamos una ruta <strong>/authorize</strong> la cual servira para obtener los datos de los usuarios que ingresaron sus datos.</p>
+<pre><code class="language-python">@app.route('/login')
+def registro():
+   github = oauth.create_client('github')
+   redirect_uri = url_for('authorize', _external=True)
+   return github.authorize_redirect(redirect_uri)
+
+@app.route('/authorize')
+def authorize():
+   github = oauth.create_client('github')
+   token = github.authorize_access_token()
+   resp = github.get('user', token=token)
+   profile = resp.json()
+   # do something with the token and profile
+   print(profile, token)
+   return redirect('/')
+
+
+if __name__ == &quot;__main__&quot;:
+   app.run(debug=True)
+
+   
+</code></pre>
+<h4 id="nuestro-ejemplo-quedaria-de-la-siguiente-manera">Nuestro ejemplo quedaria de la siguiente manera:</h4>
+<pre><code class="language-python">from flask import Flask, redirect, url_for, session
+from authlib.integrations.flask_client import OAuth
+
+app = Flask(__name__)
+
+
+app.secret_key = 'myscretkey'
+#configuraciones de oauth
+oauth = OAuth(app)
+github = oauth.register(
+    name='github',
+    client_id='',
+    client_secret='',
+    access_token_url='https://github.com/login/oauth/access_token',
+    access_token_params=None,
+    authorize_url='https://github.com/login/oauth/authorize',
+    authorize_params=None,
+    api_base_url='https://api.github.com/',
+    client_kwargs={'scope': 'user:email'},
+)
+
+@app.route(&quot;/&quot;)
+def index():
+    return f'Hola'
+
+
+@app.route('/login')
+def registro():
+    github = oauth.create_client('github')
+    redirect_uri = url_for('authorize', _external=True)
+    return github.authorize_redirect(redirect_uri)
+
+@app.route('/authorize')
+def authorize():
+    github = oauth.create_client('github')
+    token = github.authorize_access_token()
+    resp = github.get('user', token=token)
+    profile = resp.json()
+    # do something with the token and profile
+    print(profile, token)
+    return redirect('/')
+
+
+if __name__ == &quot;__main__&quot;:
+    app.run(debug=True)
+    
+</code></pre>
+                        </div><div class="tags my-3"><a class="badge badge-pill badge-light border mr-2" href="/tags/flask">
+                                    <i class="fas fa-tag mr-2"></i>Flask
+                                </a><a class="badge badge-pill badge-light border mr-2" href="/tags/github">
+                                    <i class="fas fa-tag mr-2"></i>Github
+                                </a><a class="badge badge-pill badge-light border mr-2" href="/tags/python">
+                                    <i class="fas fa-tag mr-2"></i>Python
+                                </a></div><ul class="share nav my-3 justify-content-end">
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://twitter.com/intent/tweet?url=https%3a%2f%2fnelsonweb.netlify.com%2fpost%2fflask-authlib-github%2f&text=Como%20crear%20un%20login%20con%20Flask%20y%20Github">
+              <i class="fa-fw fab fa-twitter"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://www.linkedin.com/shareArticle?url=https%3a%2f%2fnelsonweb.netlify.com%2fpost%2fflask-authlib-github%2f&title=Como%20crear%20un%20login%20con%20Flask%20y%20Github">
+                <i class="fa-fw fab fa-linkedin-in"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fnelsonweb.netlify.com%2fpost%2fflask-authlib-github%2f&t=Como%20crear%20un%20login%20con%20Flask%20y%20Github">
+                <i class="fa-fw fab fa-facebook-f"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://reddit.com/submit?url=https%3a%2f%2fnelsonweb.netlify.com%2fpost%2fflask-authlib-github%2f&title=Como%20crear%20un%20login%20con%20Flask%20y%20Github">
+                <i class="fa-fw fab fa-reddit-alien"></i>
+            </a>
+        </li>
+    </nav>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        
+                    </div>
+                </div><div class="row justify-content-center my-3">
+                    <div class="col-lg-8">
+                        <div id="commento"></div>
+                        <script src="https://commento.io"></script>
+                    </div>
+                </div></article>
+        </div>
+    </div>
+
+    <div class="related-content row mt-5 row-cols-1 row-cols-lg-3"><div class="col mb-3">
+                <div class="card h-100">
+    
+    <a href="/post/python-graphene/" class="d-block"><img loading="lazy" data-src="/images/graphene-flask1_hue692d4df48f40989279c99984ecac362_74623_700x350_resize_box_2.png" class="card-img-top mx-auto d-block" alt="Como usar Graphene con Flask"><div class="card-body">
+            <h4 class="card-title">Como usar Graphene con Flask</h4>
+            <p class="card-text text-muted text-uppercase">April 5, 2020</p>
+            <div class="card-text">
+                En este ejemplo practico te enseñare a usar Graphene que es una biblioteca para construir una API GraphQL en Python fácilmente. Para esto utilizaremos el microframework web Flask.
+
+            </div>
+        </div>
+    </a>
+</div>
+
+            </div></div>
+</main>
+
+
+    <footer class="footer text-center bg-dark py-6">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <ul class="list-inline">
+                    <li class="list-inline-item">
+                            <a href="https://facebook.com" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-facebook fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://github.com/Nelson-developer" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://linkedin.com" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://stackoverflow.com" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                </ul>
+
+                <p class="text-muted">
+                    
+                        Copyright &copy; NelsonWeb 2020
+                    
+                </p>
+
+                <p class="text-muted">
+                Powered by <a href="https://gohugo.io" target="_blank">Hugo</a> with <a href="https://github.com/puresyntax71/hugo-theme-chunky-poster" target="_blank">Chunky Poster</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    
+    
+        
+            <script src="/dist/main.d608eadfe5ac0688902e.min.js"></script>
+        
+    
+
+
+
+<script>
+    window.Prism = window.Prism || {};
+    window.Prism.manual = true;
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/components/prism-core.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/plugins/autoloader/prism-autoloader.min.js"></script>
+
+
+
+
+
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-XXXX', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+</body>
+</html>

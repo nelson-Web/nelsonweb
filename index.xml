@@ -12,6 +12,24 @@
     
     
     <item>
+      <title>Como obtener un solo dato en MongoDB</title>
+      <link>https://nelsonweb.netlify.com/post/obtener-un-dato-mongodb/</link>
+      <pubDate>Sun, 24 May 2020 14:26:22 -0600</pubDate>
+      
+      <guid>https://nelsonweb.netlify.com/post/obtener-un-dato-mongodb/</guid>
+      <description>&lt;p&gt;En este ejemplo practico te enseñare como obtener un dato en MongoDB de una manera muy facil.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Como crear un login con Flask y Github</title>
+      <link>https://nelsonweb.netlify.com/post/flask-authlib-github/</link>
+      <pubDate>Sun, 24 May 2020 12:59:22 -0600</pubDate>
+      
+      <guid>https://nelsonweb.netlify.com/post/flask-authlib-github/</guid>
+      <description>&lt;p&gt;En este ejemplo practico te enseñare como crear un login con Flask y Github usando &lt;strong&gt;Authlib&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Como usar Passport JS con Google, JWT, MongoDB, Express JS y React JS</title>
       <link>https://nelsonweb.netlify.com/post/passport-jwt-google/</link>
       <pubDate>Mon, 11 May 2020 12:57:47 -0600</pubDate>
