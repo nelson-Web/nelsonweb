@@ -6,10 +6,28 @@
     <description>Recent content in Posts on NelsonWeb</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es</language>
-    <lastBuildDate>Sun, 24 May 2020 14:26:22 -0600</lastBuildDate>
+    <lastBuildDate>Thu, 18 Jun 2020 13:52:43 -0600</lastBuildDate>
     
 	<atom:link href="https://nelsonweb.netlify.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Como usar Firestore y React JS</title>
+      <link>https://nelsonweb.netlify.com/post/como-usar-firestore-reactjs/</link>
+      <pubDate>Thu, 18 Jun 2020 13:52:43 -0600</pubDate>
+      
+      <guid>https://nelsonweb.netlify.com/post/como-usar-firestore-reactjs/</guid>
+      <description>&lt;p&gt;Para este ejemplo usaremos reactfire que es un libreria que nos facilita utilizar &lt;strong&gt;firebase&lt;/strong&gt; en &lt;strong&gt;React JS&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Como Subir Imagenes Con Firebase y React JS</title>
+      <link>https://nelsonweb.netlify.com/post/como-subir-imagenes-con-firebase-reactjs/</link>
+      <pubDate>Thu, 18 Jun 2020 12:12:18 -0600</pubDate>
+      
+      <guid>https://nelsonweb.netlify.com/post/como-subir-imagenes-con-firebase-reactjs/</guid>
+      <description>&lt;p&gt;En este ejemplo practico te enseñare como subir imagenes con &lt;strong&gt;Firebase&lt;/strong&gt; usando &lt;strong&gt;reactfire&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Como obtener un solo dato en MongoDB</title>
